@@ -27,899 +27,695 @@
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/responsive.css" />
     <link rel="stylesheet" href="demos/corporate/corporate.css" />
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 40px;
+            background: #f9f9f9;
+            text-align: center;
+        }
+
+        :root {
+            --brand: #5B6CFF;
+            --brand-2: #20C997;
+            --text: #0f172a;
+            --muted: #64748b;
+            --bg: #f8fafc;
+            --card: #ffffff;
+            --ring: rgba(91, 108, 255, .25);
+            --radius: 20px;
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        html,
+        body {
+            margin: 0
+        }
+
+        body {
+            font-family: 'Inter', system-ui, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+            color: var(--text);
+            background: radial-gradient(1200px 800px at 100% -10%, #eaf0ff 5%, transparent 60%), radial-gradient(1000px 600px at -5% 110%, #e8fff7 0%, transparent 55%), var(--bg)
+        }
+
+        .wrapper {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 32px 20px 64px
+        }
+
+        header {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            align-items: flex-start;
+            margin-bottom: 22px
+        }
+
+        .eyebrow {
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: .14em;
+            color: var(--brand);
+            text-transform: uppercase
+        }
+
+        h1 {
+            font-size: 36px;
+            line-height: 1.15;
+            margin: 0
+        }
+
+        .subtitle {
+            color: var(--muted)
+        }
+
+        .filters {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin: 18px 0 8px;
+            justify-content: center
+        }
+
+        .chip {
+            border: 1px solid #e2e8f0;
+            background: #fff;
+            color: #0f172a;
+            padding: 8px 12px;
+            border-radius: 999px;
+            font-size: 14px;
+            cursor: pointer;
+            transition: .2s ease
+        }
+
+        .chip:hover {
+            border-color: var(--brand);
+            box-shadow: 0 0 0 4px var(--ring)
+        }
+
+        .chip.active {
+            background: var(--brand);
+            border-color: var(--brand);
+            color: #fff
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+            margin-top: 10px
+        }
+
+        @media (max-width:1024px) {
+            .grid {
+                grid-template-columns: repeat(2, 1fr)
+            }
+        }
+
+        @media (max-width:640px) {
+            .grid {
+                grid-template-columns: 1fr
+            }
+
+            h1 {
+                font-size: 28px
+            }
+        }
+
+        .card {
+            background: var(--card);
+            border-radius: var(--radius);
+            overflow: hidden;
+            border: 1px solid #e2e8f0;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            min-height: 320px;
+            transition: transform .25s ease, box-shadow .25s ease
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 40px rgba(2, 6, 23, .08)
+        }
+
+        .media {
+            position: relative;
+            overflow: hidden;
+            height: 180px;
+            background: #000
+        }
+
+        .media img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transform: scale(1.02);
+            transition: transform .35s ease
+        }
+
+        .card:hover .media img {
+            transform: scale(1.08)
+        }
+
+        .content {
+            padding: 16px 16px 8px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px
+        }
+
+        .title {
+            font-weight: 700;
+            font-size: 18px;
+            line-height: 1.3
+        }
+
+        .desc {
+            color: var(--muted);
+            font-size: 14px;
+            max-height: 0;
+            opacity: 0;
+            transition: max-height .35s ease, opacity .35s ease
+        }
+
+        .card:hover .desc {
+            max-height: 160px;
+            opacity: 1
+        }
+
+        .actions {
+            margin-top: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 16px 16px
+        }
+
+        .cta {
+            display: inline-flex;
+            gap: 8px;
+            align-items: center;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 10px 14px;
+            font-weight: 600;
+            text-decoration: none;
+            color: var(--text);
+            transition: .2s ease
+        }
+
+        .cta:hover {
+            border-color: var(--brand);
+            color: var(--brand)
+        }
+
+        .cat {
+            position: absolute;
+            left: 12px;
+            top: 12px;
+            padding: 6px 10px;
+            border-radius: 999px;
+            font-size: 12px;
+            font-weight: 700;
+            color: #111827;
+            background: #fff;
+            border: 1px solid #e2e8f0
+        }
+
+        .note {
+            margin-top: 22px;
+            color: var(--muted);
+            font-size: 13px
+        }
+    </style>
 </head>
+
 <body data-mobile-nav-trigger-alignment="right" data-mobile-nav-style="modern" data-mobile-nav-bg-color="#242E45">
-    <div class="box-layout">
+    <section class="box-layout">
         <!-- start header -->
         <header>
             <!-- start navigation -->
-            <nav class="navbar navbar-expand-lg header-light bg-white disable-fixed">
+            <nav class="navbar navbar-expand-lg header-light bg-white shadow-sm fixed-top">
                 <div class="container-fluid">
+
+                    <!-- Logo -->
                     <div class="col-auto col-xl-3 col-lg-2 me-lg-0 me-auto">
                         <a class="navbar-brand" href="index.html">
                             <img src="images/demo-corporate-logo-black.png"
-                                data-at2x="images/demo-corporate-logo-black@2x.png" alt="" class="default-logo">
+                                data-at2x="images/demo-corporate-logo-black@2x.png" alt="Bodhitree Technologies Logo"
+                                class="default-logo">
                             <img src="images/demo-corporate-logo-black.png"
-                                data-at2x="images/demo-corporate-logo-black@2x.png" alt="" class="alt-logo">
+                                data-at2x="images/demo-corporate-logo-black@2x.png" alt="Bodhitree Technologies Logo"
+                                class="alt-logo">
                             <img src="images/demo-corporate-logo-black.png"
-                                data-at2x="images/demo-corporate-logo-black@2x.png" alt="" class="mobile-logo">
+                                data-at2x="images/demo-corporate-logo-black@2x.png" alt="Bodhitree Technologies Logo"
+                                class="mobile-logo">
                         </a>
                     </div>
-                    <div class="col-auto col-xl-6 col-lg-8 menu-order position-static">
+
+                    <!-- Navigation Menu -->
+                    <div class="col-auto col-xl-9 col-lg-10 menu-order position-static">
                         <button class="navbar-toggler float-start" type="button" data-bs-toggle="collapse"
                             data-bs-target="#navbarNav" aria-controls="navbarNav" aria-label="Toggle navigation">
                             <span class="navbar-toggler-line"></span>
                             <span class="navbar-toggler-line"></span>
                             <span class="navbar-toggler-line"></span>
-                            <span class="navbar-toggler-line"></span>
                         </button>
-                        <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
-                            <ul class="navbar-nav">
+
+                        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                            <ul class="navbar-nav fw-500">
                                 <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
                                 <li class="nav-item"><a href="demo-corporate-about.html" class="nav-link">About</a></li>
-                                <li class="nav-item dropdown dropdown-with-icon-style02">
-                                    <a href="demo-corporate-services.html" class="nav-link">Services</a>
-                                    
-                                </li>
-                                <li class="nav-item"><a href="our product.html" class="nav-link">Products</a></li>
-
-                                <li class="nav-item dropdown dropdown-with-icon-style02">
-                                    <a href="gallery.html" class="nav-link">Gallery</a>
-                                    
-                                       
-                                    
-                                </li>
-
-                                <li class="nav-item"><a href="career.html" class="nav-link">Career</a></li>
-
+                                <li class="nav-item"><a href="demo-corporate-services.html"
+                                        class="nav-link">Services</a></li>
+                                <li class="nav-item"><a href="new_prod.html" class="nav-link">Products</a></li>
+                                <li class="nav-item"><a href="gallery.html" class="nav-link">Gallery</a></li>
+                                <!-- <li class="nav-item"><a href="career.html" class="nav-link">Career</a></li> -->
                                 <li class="nav-item"><a href="demo-corporate-contact.html" class="nav-link">Contact</a>
                                 </li>
                             </ul>
                         </div>
                     </div>
-                    <div class="col-auto col-xl-3 col-lg-2 text-end md-pe-0">
-                        <div class="header-icon">
-                           
-                            <div class="elements-social social-icon-style-02 mt-20px xs-mt-15px">
-                                <ul class="medium-icon dark">
-                                    <li class="my-0"><a class="facebook" href="https://www.facebook.com/people/Bodhitree-Technologies-Pvt-Ltd/100057190400397/" target="_blank"><i
-                                                class="fa-brands fa-facebook-f"></i></a></li>
-                                    <li class="my-0"><a class="dribbble" href="https://www.linkedin.com/uas/login?session_redirect=https%3A%2F%2Fwww.linkedin.com%2Fcompany%2F13368154%2Fadmin%2F" target="_blank"><i
-                                                class="fa-brands fa-linkedin"></i></a></li>
-                                    <li class="my-0"><a class="twitter" href="https://twitter.com/Bodhi09881061" target="_blank"><i
-                                                class="fa-brands fa-twitter"></i></a></li>
-                                    <li class="my-0"><a class="instagram" href="https://www.instagram.com/bodhi.tree2020/" target="_blank"><i
-                                                class="fa-brands fa-instagram"></i></a></li>
-                                </ul>
-                            </div>
 
-                           
-                        </div>
-                    </div>
                 </div>
             </nav>
             <!-- end navigation -->
         </header>
-        <!-- end header -->
-        <!-- start page title -->
-        <section class="top-space-margin page-title-big-typography border-radius-6px lg-border-radius-0px p-0"
-            data-parallax-background-ratio="0.5" style="background-image: url(images/services\ bg.png)">
-            <div class="opacity-extra-medium bg-blue-whale"></div>
-            <div class="container">
-                <div class="row align-items-center justify-content-center small-screen">
-                    <div class="col-lg-8 position-relative text-center page-title-extra-large"
-                        data-anime='{ "el": "childs", "translateY": [50, 0], "opacity": [0,1], "duration": 600, "delay": 0, "staggervalue": 300, "easing": "easeOutQuad" }'>
-                        <h1 class="m-auto text-white text-shadow-double-large fw-600 ls-minus-2px">Services</h1>
-                    </div>
-                    <div class="down-section text-center"
-                        data-anime='{ "translateY": [-50, 0], "opacity": [0,1], "duration": 600, "delay": 0, "staggervalue": 300, "easing": "easeOutQuad" }'>
-                        <a href="#down-section" class="section-link">
-                            <div class="text-white">
-                                <i class="feather icon-feather-chevron-down icon-very-medium"></i>
-                            </div>
-                        </a>
-                    </div>
+    </section>
+    <!-- end header -->
+    <!-- start page title -->
+    <section class="top-space-margin page-title-big-typography border-radius-6px lg-border-radius-0px p-0"
+        data-parallax-background-ratio="0.5"
+        style="background-image: url(''); background-size: cover; background-position: center;">
+
+        <!-- Dark overlay for readability -->
+        <div class="opacity-extra-medium bg-blue-whale"></div>
+
+        <div class="container">
+            <div class="row align-items-center justify-content-center small-screen">
+
+                <!-- Company Name / Tagline -->
+                <div class="col-lg-8 position-relative text-center page-title-extra-large"
+                    data-anime='{ "el": "childs", "translateY": [50, 0], "opacity": [0,1], "duration": 600, "delay": 0, "staggervalue": 300, "easing": "easeOutQuad" }'>
+
+                    <h3 class="m-auto text-white text-shadow-double-large fw-600 ls-minus-2px">
+                        Our Expertise – Comprehensive Telecom Services
+                    </h3>
+                    <p class="text-white fs-5 fw-300 mt-3">
+                        Explore our services across optimization, repair & maintenance, field operations, logistics,
+                        and deployment.
+                    </p>
+                </div>
+
+                <!-- Scroll-down arrow -->
+                <div class="down-section text-center"
+                    data-anime='{ "translateY": [-50, 0], "opacity": [0,1], "duration": 600, "delay": 0, "staggervalue": 300, "easing": "easeOutQuad" }'>
+                    <a href="#down-section" class="section-link">
+                        <div class="text-white">
+                            <i class="feather icon-feather-chevron-down icon-very-medium"></i>
+                        </div>
+                    </a>
                 </div>
             </div>
-        </section>
-        <!-- end page title -->
-        <!-- start section -->
-        <section id="down-section" class="position-relative pb-4 overflow-hidden">
-            <div class="container">
-                <div class="row align-items-center mb-8">
-                    <div class="col-lg-5 md-mb-50px"
-                        data-anime='{ "translateY": [0, 0], "perspective": [1200,1200], "scale": [1.1, 1], "rotateX": [50, 0], "opacity": [0,0.7], "duration": 800, "delay": 0, "staggervalue": 300, "easing": "easeOutQuad" }'>
-                        <div class="d-flex flex-column box-shadow-double-large border-radius-8px overflow-hidden">
-                            <div class="row row-cols-1 justify-content-center m-0">
-                                <div
-                                    class="col p-9 border-bottom border-color-extra-medium-gray bg-white last-paragraph-no-margin">
-                                    <div class="d-flex align-items-center justify-content-center text-dark-gray">
-                                        <div class="flex-shrink-0 me-20px">
-                                            <h2 class="mb-0 fs-60 fw-700 ls-minus-2px">99<sup class="fs-26">%</sup></h2>
-                                        </div>
-                                        <div>
-                                            <span class="fs-18 lh-28 fw-600 d-block">Track and analyze <br />business
-                                                reports.</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div
-                                    class="col p-9 border-bottom border-color-extra-medium-gray bg-white last-paragraph-no-margin">
-                                    <div class="d-flex align-items-center justify-content-center text-dark-gray">
-                                        <div class="flex-shrink-0 me-20px">
-                                            <h2 class="mb-0 fs-60 fw-700 ls-minus-4px">4.9</h2>
-                                        </div>
-                                        <div>
-                                            <div
-                                                class="review-star-icon fs-22 d-inline-block text-gradient-orange-sky-blue">
-                                                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
-                                                    class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
-                                                    class="bi bi-star-fill"></i>
-                                            </div>
-                                            <span class="fs-18 lh-28 fw-600 d-block">Best rated agency</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col p-9 bg-white last-paragraph-no-margin">
-                                    <div class="d-flex align-items-center justify-content-center text-dark-gray">
-                                        <div class="flex-shrink-0 me-20px">
-                                            <h2 class="mb-0 fs-60 fw-700 ls-minus-2px">98<sup class="fs-26">%</sup></h2>
-                                        </div>
-                                        <div>
-                                            <span class="fs-18 lh-28 fw-600 d-block">Genuine repeated <br />happy
-                                                customers.</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-5 offset-lg-1 col-lg-6"
-                        data-anime='{ "el": "childs", "translateY": [30, 0], "opacity": [0,1], "duration": 600, "delay":0, "staggervalue": 300, "easing": "easeOutQuad" }'>
-                        <span
-                            class="ps-25px pe-25px mb-20px text-uppercase text-base-color fs-14 lh-42px fw-700 border-radius-100px bg-gradient-very-light-gray-transparent d-inline-block">Creative
-                            approach</span>
-
-
-
-                            <!-- write somthing here -->
-                        <h3 class="text-dark-gray fw-700 ls-minus-1px"></h3>
-                        <p class="w-95 lg-w-100 mb-35px">.</p>
-
-
-
-                        <div
-                            class="feature-box feature-box-left-icon bg-gradient-flamingo-amethyst-green border-radius-4px w-95 xl-w-100 mb-40px ps-30px pe-30px pt-15px pb-15px xs-p-15px sm-mb-30px xs-lh-normal">
-                            <div class="feature-box-icon me-10px">
-                                <img src="https://via.placeholder.com/48x62" class="h-30px" alt="">
-                            </div>
-                            <div class="feature-box-content">
-                                <span class="alt-font text-white fw-500">Best corporate services agency in world.</span>
-                            </div>
-                        </div>
-                        <div class="row align-items-center text-center text-sm-start">
-                            <div class="col-sm-auto xs-mb-5px">
-                                <h3
-                                    class="alt-font text-dark-gray mb-0 d-inline-block align-middle me-10px lg-fs-32 fw-700">
-                                    722+</h3>
-                                <div
-                                    class="text-center bg-dark-gray text-white fs-14 border-radius-4px d-inline-block ps-15px pe-15px lh-34 align-middle me-5px">
-                                    <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
-                                        class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
-                                        class="bi bi-star-fill"></i>
-                                </div>
-                            </div>
-                            <div
-                                class="col-sm border-start border-2 border-color-dark-gray ps-25px ms-10px xl-ps-20px lg-ms-5px xs-border-start-0 xs-ps-15px xs-pe-15px xs-m-0">
-                                <p class="m-0 lh-26 text-dark-gray fw-600">5 star reviews from our satisfied customers.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <img src="images/545x615.jpg" class="position-absolute top-80px left-170px opacity-7 z-index-minus-1"
-                data-bottom-top="transform: rotate(0deg) translateY(0)"
-                data-top-bottom="transform:rotate(-15deg) translateY(0)" alt="" />
-        </section>
-        <!-- end section -->
-
-
-
-
-
-        <!-- start section -->
-        <section
-            class="bg-gradient-quartz-white position-relative z-index-0 border-radius-6px lg-border-radius-0px overflow-hidden">
-            <div class="container">
-                <div class="row justify-content-center mb-3">
-                    <div class="col-xl-5 col-lg-6 text-center"
-                        data-anime='{ "el": "childs", "translateY": [30, 0], "opacity": [0,1], "duration": 600, "delay":0, "staggervalue": 300, "easing": "easeOutQuad" }'>
-                        <span
-                            class="ps-25px pe-25px mb-10px text-uppercase text-base-color fs-14 lh-42px fw-700 border-radius-100px bg-gradient-quartz-light-transparent d-inline-block">Creative
-                            approach</span>
-                        <h3 class="text-dark-gray fw-700 ls-minus-1px">Corporate services</h3>
-                    </div>
-                </div>
-
-                <!-- Row 1 start here -->
-                <div class="row row-cols-1 row-cols-xl-3 row-cols-lg-3 row-cols-md-2 row-cols-sm-1 justify-content-center mb-5 transition-inner-all"
-                    data-anime='{ "el": "childs", "translateY": [30, 0], "opacity": [0,1], "duration": 600, "delay":0, "staggervalue": 300, "easing": "easeOutQuad" }'>
-                    <!-- start interactive banner item -->
-                    <div class="col interactive-banner-style-02 hover-box dark-hover md-mb-30px">
-                        <div
-                            class="h-100 text-center position-relative border-radius-6px box-shadow-quadruple-large overflow-hidden">
-                            <figure class="m-0">
-                                <a href="s1Network Assets Management .html" class="position-relative d-block">
-                                    <img src="images/NetworkAssets.png" alt="" />
-                                    <div
-                                        class="label position-absolute right-20px top-20px bg-base-color fw-600 text-white text-uppercase border-radius-30px ps-15px pe-15px fs-11 ls-05px">
-                                        Creativity</div>
-                                </a>
-                                <figcaption class="w-100 position-absolute bottom-0px bg-white">
-                                    <div
-                                        class="position-relative z-index-2 p-40px pt-25px pb-15px border-bottom border-dark-opacity">
-                                        <i class="features-icon line-icon-Archery-2 d-block icon-extra-large"></i>
-                                        <a href="s1Network Assets Management .html"
-                                            class="fw-600 d-inline-block mb-5px text-dark-gray fs-18">Network Assets
-                                            Management & Optimization</a>
-                                        <!-- <p class="w-80 lg-w-100 fs-16 mx-auto mb-15px lg-mb-10px text-light-opacity">Lorem ipsum simply dummy text of amet consectetur.</p> -->
-                                    </div>
-                                    <a href="s1Network Assets Management .html"
-                                        class="btn btn-link btn-hover-animation-switch btn-small fw-700 text-dark-gray text-uppercase p-20px z-index-1">
-                                        <span>
-                                            <span class="btn-text">Explore services</span>
-                                            <span class="btn-icon"><i class="fa-solid fa-arrow-right"></i></span>
-                                            <span class="btn-icon"><i class="fa-solid fa-arrow-right"></i></span>
-                                        </span>
-                                    </a>
-                                    <div class="box-overlay bg-base-color"></div>
-                                </figcaption>
-                            </figure>
-                        </div>
-                    </div>
-                    <!-- end interactive banner item -->
-                    <!-- start interactive banner item -->
-
-
-
-                    <div class="col interactive-banner-style-02 hover-box dark-hover md-mb-30px">
-                        <div
-                            class="h-100 text-center position-relative border-radius-6px box-shadow-quadruple-large overflow-hidden">
-                            <figure class="m-0">
-                                <a href="s2Repair & Refurbishment.html" class="position-relative d-block">
-                                    <img src="images/RepairRefurbishment.png" alt="" />
-                                    <div
-                                        class="label position-absolute right-20px top-20px bg-base-color fw-600 text-white text-uppercase border-radius-30px ps-15px pe-15px fs-11 ls-05px">
-                                        Discover</div>
-                                </a>
-                                <figcaption class="w-100 position-absolute bottom-0px bg-white">
-                                    <div
-                                        class="position-relative z-index-2 p-40px pt-25px pb-15px border-bottom border-dark-opacity">
-                                        <i class="features-icon line-icon-Coins d-block icon-extra-large"></i>
-                                        <a href="s2Repair & Refurbishment.html"
-                                            class="fw-600 d-inline-block mb-5px text-dark-gray fs-18">Repair &
-                                            Refurbishment of Telecom Equipment</a>
-                                        <!-- <p class="w-80 lg-w-100 fs-16 mx-auto mb-15px lg-mb-10px text-light-opacity">Lorem ipsum simply dummy text of amet consectetur.</p> -->
-                                    </div>
-                                    <a href="s2Repair & Refurbishment.html"
-                                        class="btn btn-link btn-hover-animation-switch btn-small fw-700 text-dark-gray text-uppercase p-20px z-index-1">
-                                        <span>
-                                            <span class="btn-text">Explore services</span>
-                                            <span class="btn-icon"><i class="fa-solid fa-arrow-right"></i></span>
-                                            <span class="btn-icon"><i class="fa-solid fa-arrow-right"></i></span>
-                                        </span>
-                                    </a>
-                                    <div class="box-overlay bg-base-color"></div>
-                                </figcaption>
-                            </figure>
-                        </div>
-                    </div>
-
-                    <!-- end interactive banner item -->
-                    <!-- start interactive banner item -->
-
-                    <div class="col interactive-banner-style-02 hover-box dark-hover md-mb-30px">
-                        <div
-                            class="h-100 text-center position-relative border-radius-6px box-shadow-quadruple-large overflow-hidden">
-                            <figure class="m-0">
-                                <a href="s3Repair of Microwave.html" class="position-relative d-block">
-                                    <img src="images/Repair of Microwave.p" alt="" />
-                                    <div
-                                        class="label position-absolute right-20px top-20px bg-base-color fw-600 text-white text-uppercase border-radius-30px ps-15px pe-15px fs-11 ls-05px">
-                                        Modern</div>
-                                </a>
-                                <figcaption class="w-100 position-absolute bottom-0px bg-white">
-                                    <div
-                                        class="position-relative z-index-2 p-40px pt-25px pb-15px border-bottom border-dark-opacity">
-                                        <i class="features-icon line-icon-Bar-Chart3 d-block icon-extra-large"></i>
-                                        <a href="s3Repair of Microwave.html"
-                                            class="fw-600 d-inline-block mb-5px text-dark-gray fs-18">Repair of
-                                            Microwave and GSM Antennas</a>
-                                        <!-- <p class="w-80 lg-w-100 fs-16 mx-auto mb-15px lg-mb-10px text-light-opacity">Lorem ipsum simply dummy text of amet consectetur.</p> -->
-                                    </div>
-                                    <a href="s3Repair of Microwave.html"
-                                        class="btn btn-link btn-hover-animation-switch btn-small fw-700 text-dark-gray text-uppercase p-20px z-index-1">
-                                        <span>
-                                            <span class="btn-text">Explore services</span>
-                                            <span class="btn-icon"><i class="fa-solid fa-arrow-right"></i></span>
-                                            <span class="btn-icon"><i class="fa-solid fa-arrow-right"></i></span>
-                                        </span>
-                                    </a>
-                                    <div class="box-overlay bg-base-color"></div>
-                                </figcaption>
-                            </figure>
-                        </div>
-                    </div>
-                </div>
-                <!-- row 1 end -->
-
-
-
-
-                <!-- Row 2 start here -->
-                <div class="row row-cols-1 row-cols-xl-3 row-cols-lg-3 row-cols-md-2 row-cols-sm-1 justify-content-center mb-5 transition-inner-all"
-                    data-anime='{ "el": "childs", "translateY": [30, 0], "opacity": [0,1], "duration": 600, "delay":0, "staggervalue": 300, "easing": "easeOutQuad" }'>
-                    <!-- start interactive banner item -->
-                    <div class="col interactive-banner-style-02 hover-box dark-hover md-mb-30px">
-                        <div
-                            class="h-100 text-center position-relative border-radius-6px box-shadow-quadruple-large overflow-hidden">
-                            <figure class="m-0">
-                                <a href="s4.Operations & Maintenance.html" class="position-relative d-block">
-                                    <img src="images/maintenance-service.png" alt="" />
-                                    <div
-                                        class="label position-absolute right-20px top-20px bg-base-color fw-600 text-white text-uppercase border-radius-30px ps-15px pe-15px fs-11 ls-05px">
-                                        Creativity</div>
-                                </a>
-                                <figcaption class="w-100 position-absolute bottom-0px bg-white">
-                                    <div
-                                        class="position-relative z-index-2 p-40px pt-25px pb-15px border-bottom border-dark-opacity">
-                                        <i class="features-icon line-icon-Archery-2 d-block icon-extra-large"></i>
-                                        <a href="s4.Operations & Maintenance.html"
-                                            class="fw-600 d-inline-block mb-5px text-dark-gray fs-18">Operations & Maintenance Solutions</a>
-                                        <!-- <p class="w-80 lg-w-100 fs-16 mx-auto mb-15px lg-mb-10px text-light-opacity">Lorem ipsum simply dummy text of amet consectetur.</p> -->
-                                    </div>
-                                    <a href="s4.Operations & Maintenance.html"
-                                        class="btn btn-link btn-hover-animation-switch btn-small fw-700 text-dark-gray text-uppercase p-20px z-index-1">
-                                        <span>
-                                            <span class="btn-text">Explore services</span>
-                                            <span class="btn-icon"><i class="fa-solid fa-arrow-right"></i></span>
-                                            <span class="btn-icon"><i class="fa-solid fa-arrow-right"></i></span>
-                                        </span>
-                                    </a>
-                                    <div class="box-overlay bg-base-color"></div>
-                                </figcaption>
-                            </figure>
-                        </div>
-                    </div>
-                    <!-- end interactive banner item -->
-                    <!-- start interactive banner item -->
-
-
-
-                    <div class="col interactive-banner-style-02 hover-box dark-hover md-mb-30px">
-                        <div
-                            class="h-100 text-center position-relative border-radius-6px box-shadow-quadruple-large overflow-hidden">
-                            <figure class="m-0">
-                                <a href="s5Field Services & Fault.html" class="position-relative d-block">
-                                    <img src="images/field services.png" alt="" />
-                                    <div
-                                        class="label position-absolute right-20px top-20px bg-base-color fw-600 text-white text-uppercase border-radius-30px ps-15px pe-15px fs-11 ls-05px">
-                                        Discover</div>
-                                </a>
-                                <figcaption class="w-100 position-absolute bottom-0px bg-white">
-                                    <div
-                                        class="position-relative z-index-2 p-40px pt-25px pb-15px border-bottom border-dark-opacity">
-                                        <i class="features-icon line-icon-Coins d-block icon-extra-large"></i>
-                                        <a href="s5Field Services & Fault.html"
-                                            class="fw-600 d-inline-block mb-5px text-dark-gray fs-18">Field Services & Fault Diagnosis</a>
-                                        <!-- <p class="w-80 lg-w-100 fs-16 mx-auto mb-15px lg-mb-10px text-light-opacity">Lorem ipsum simply dummy text of amet consectetur.</p> -->
-                                    </div>
-                                    <a href="s5Field Services & Fault.html"
-                                        class="btn btn-link btn-hover-animation-switch btn-small fw-700 text-dark-gray text-uppercase p-20px z-index-1">
-                                        <span>
-                                            <span class="btn-text">Explore services</span>
-                                            <span class="btn-icon"><i class="fa-solid fa-arrow-right"></i></span>
-                                            <span class="btn-icon"><i class="fa-solid fa-arrow-right"></i></span>
-                                        </span>
-                                    </a>
-                                    <div class="box-overlay bg-base-color"></div>
-                                </figcaption>
-                            </figure>
-                        </div>
-                    </div>
-
-                    <!-- end interactive banner item -->
-                    <!-- start interactive banner item -->
-
-                    <div class="col interactive-banner-style-02 hover-box dark-hover md-mb-30px">
-                        <div
-                            class="h-100 text-center position-relative border-radius-6px box-shadow-quadruple-large overflow-hidden">
-                            <figure class="m-0">
-                                <a href="s6Warehouse Services.html" class="position-relative d-block">
-                                    <img src="images/warehousenew.jpeg" alt="" />
-                                    <div
-                                        class="label position-absolute right-20px top-20px bg-base-color fw-600 text-white text-uppercase border-radius-30px ps-15px pe-15px fs-11 ls-05px">
-                                        Modern</div>
-                                </a>
-                                <figcaption class="w-100 position-absolute bottom-0px bg-white">
-                                    <div
-                                        class="position-relative z-index-2 p-40px pt-25px pb-15px border-bottom border-dark-opacity">
-                                        <i class="features-icon line-icon-Bar-Chart3 d-block icon-extra-large"></i>
-                                        <a href="s6Warehouse Services.html"
-                                            class="fw-600 d-inline-block mb-5px text-dark-gray fs-18">Warehouse Services and Reverse Logistics</a>
-                                        <!-- <p class="w-80 lg-w-100 fs-16 mx-auto mb-15px lg-mb-10px text-light-opacity">Lorem ipsum simply dummy text of amet consectetur.</p> -->
-                                    </div>
-                                    <a href="s6Warehouse Services.html"
-                                        class="btn btn-link btn-hover-animation-switch btn-small fw-700 text-dark-gray text-uppercase p-20px z-index-1">
-                                        <span>
-                                            <span class="btn-text">Explore services</span>
-                                            <span class="btn-icon"><i class="fa-solid fa-arrow-right"></i></span>
-                                            <span class="btn-icon"><i class="fa-solid fa-arrow-right"></i></span>
-                                        </span>
-                                    </a>
-                                    <div class="box-overlay bg-base-color"></div>
-                                </figcaption>
-                            </figure>
-                        </div>
-                    </div>
-                </div>
-                <!-- row 2 end -->
-
-
-
-
-                <!-- Row 3 start here -->
-                <div class="row row-cols-1 row-cols-xl-3 row-cols-lg-3 row-cols-md-2 row-cols-sm-1 justify-content-center mb-5 transition-inner-all"
-                    data-anime='{ "el": "childs", "translateY": [30, 0], "opacity": [0,1], "duration": 600, "delay":0, "staggervalue": 300, "easing": "easeOutQuad" }'>
-                    <!-- start interactive banner item -->
-                    <div class="col interactive-banner-style-02 hover-box dark-hover md-mb-30px">
-                        <div
-                            class="h-100 text-center position-relative border-radius-6px box-shadow-quadruple-large overflow-hidden">
-                            <figure class="m-0">
-                                <a href="s7Spare Parts.html" class="position-relative d-block">
-                                    <img src="images/spare part.png" alt="" />
-                                    <div
-                                        class="label position-absolute right-20px top-20px bg-base-color fw-600 text-white text-uppercase border-radius-30px ps-15px pe-15px fs-11 ls-05px">
-                                        Creativity</div>
-                                </a>
-                                <figcaption class="w-100 position-absolute bottom-0px bg-white">
-                                    <div
-                                        class="position-relative z-index-2 p-40px pt-25px pb-15px border-bottom border-dark-opacity">
-                                        <i class="features-icon line-icon-Archery-2 d-block icon-extra-large"></i>
-                                        <a href="s7Spare Parts.html"
-                                            class="fw-600 d-inline-block mb-5px text-dark-gray fs-18">Spare Parts Management</a>
-                                        <!-- <p class="w-80 lg-w-100 fs-16 mx-auto mb-15px lg-mb-10px text-light-opacity">Lorem ipsum simply dummy text of amet consectetur.</p> -->
-                                    </div>
-                                    <a href="s7Spare Parts.html"
-                                        class="btn btn-link btn-hover-animation-switch btn-small fw-700 text-dark-gray text-uppercase p-20px z-index-1">
-                                        <span>
-                                            <span class="btn-text">Explore services</span>
-                                            <span class="btn-icon"><i class="fa-solid fa-arrow-right"></i></span>
-                                            <span class="btn-icon"><i class="fa-solid fa-arrow-right"></i></span>
-                                        </span>
-                                    </a>
-                                    <div class="box-overlay bg-base-color"></div>
-                                </figcaption>
-                            </figure>
-                        </div>
-                    </div>
-                    <!-- end interactive banner item -->
-             
-
-                    <div class="col interactive-banner-style-02 hover-box dark-hover md-mb-30px">
-                        <div
-                            class="h-100 text-center position-relative border-radius-6px box-shadow-quadruple-large overflow-hidden">
-                            <figure class="m-0">
-                                <a href="s8Transformer Repair.html" class="position-relative d-block">
-                                    <img src="images/transformer repair.png" alt="" />
-                                    <div
-                                        class="label position-absolute right-20px top-20px bg-base-color fw-600 text-white text-uppercase border-radius-30px ps-15px pe-15px fs-11 ls-05px">
-                                        Discover</div>
-                                </a>
-                                <figcaption class="w-100 position-absolute bottom-0px bg-white">
-                                    <div
-                                        class="position-relative z-index-2 p-40px pt-25px pb-15px border-bottom border-dark-opacity">
-                                        <i class="features-icon line-icon-Coins d-block icon-extra-large"></i>
-                                        <a href="s8Transformer Repair.html"
-                                            class="fw-600 d-inline-block mb-5px text-dark-gray fs-18">Repair &
-                                            Transformer Repair Services</a>
-                                        <!-- <p class="w-80 lg-w-100 fs-16 mx-auto mb-15px lg-mb-10px text-light-opacity">Lorem ipsum simply dummy text of amet consectetur.</p> -->
-                                    </div>
-                                    <a href="s8Transformer Repair.html"
-                                        class="btn btn-link btn-hover-animation-switch btn-small fw-700 text-dark-gray text-uppercase p-20px z-index-1">
-                                        <span>
-                                            <span class="btn-text">Explore services</span>
-                                            <span class="btn-icon"><i class="fa-solid fa-arrow-right"></i></span>
-                                            <span class="btn-icon"><i class="fa-solid fa-arrow-right"></i></span>
-                                        </span>
-                                    </a>
-                                    <div class="box-overlay bg-base-color"></div>
-                                </figcaption>
-                            </figure>
-                        </div>
-                    </div>
-
-                    <!-- end interactive banner item -->
-                    <!-- start interactive banner item -->
-
-                    <div class="col interactive-banner-style-02 hover-box dark-hover md-mb-30px">
-                        <div
-                            class="h-100 text-center position-relative border-radius-6px box-shadow-quadruple-large overflow-hidden">
-                            <figure class="m-0">
-                                <a href="s9Technical Manpower.html" class="position-relative d-block">
-                                    <img src="images/manpower supply.png" alt="" />
-                                    <div
-                                        class="label position-absolute right-20px top-20px bg-base-color fw-600 text-white text-uppercase border-radius-30px ps-15px pe-15px fs-11 ls-05px">
-                                        Modern</div>
-                                </a>
-                                <figcaption class="w-100 position-absolute bottom-0px bg-white">
-                                    <div
-                                        class="position-relative z-index-2 p-40px pt-25px pb-15px border-bottom border-dark-opacity">
-                                        <i class="features-icon line-icon-Bar-Chart3 d-block icon-extra-large"></i>
-                                        <a href="s9Technical Manpower.html"
-                                            class="fw-600 d-inline-block mb-5px text-dark-gray fs-18">Technical Manpower Supply</a>
-                                        <!-- <p class="w-80 lg-w-100 fs-16 mx-auto mb-15px lg-mb-10px text-light-opacity">Lorem ipsum simply dummy text of amet consectetur.</p> -->
-                                    </div>
-                                    <a href="s9Technical Manpower.html"
-                                        class="btn btn-link btn-hover-animation-switch btn-small fw-700 text-dark-gray text-uppercase p-20px z-index-1">
-                                        <span>
-                                            <span class="btn-text">Explore services</span>
-                                            <span class="btn-icon"><i class="fa-solid fa-arrow-right"></i></span>
-                                            <span class="btn-icon"><i class="fa-solid fa-arrow-right"></i></span>
-                                        </span>
-                                    </a>
-                                    <div class="box-overlay bg-base-color"></div>
-                                </figcaption>
-                            </figure>
-                        </div>
-                    </div>
-                </div>
-                <!-- row 3 end -->
-
-
-                <!-- Row 4 start here -->
-                <div class="row row-cols-1 row-cols-xl-3 row-cols-lg-3 row-cols-md-2 row-cols-sm-1 justify-content-center mb-5 transition-inner-all"
-                    data-anime='{ "el": "childs", "translateY": [30, 0], "opacity": [0,1], "duration": 600, "delay":0, "staggervalue": 300, "easing": "easeOutQuad" }'>
-                    <!-- start interactive banner item -->
-                    <div class="col interactive-banner-style-02 hover-box dark-hover md-mb-30px">
-                        <div
-                            class="h-100 text-center position-relative border-radius-6px box-shadow-quadruple-large overflow-hidden">
-                            <figure class="m-0">
-                                <a href="s10Fade Margin.html" class="position-relative d-block">
-                                    <img src="images/improvement.png" alt="" />
-                                    <div
-                                        class="label position-absolute right-20px top-20px bg-base-color fw-600 text-white text-uppercase border-radius-30px ps-15px pe-15px fs-11 ls-05px">
-                                        Creativity</div>
-                                </a>
-                                <figcaption class="w-100 position-absolute bottom-0px bg-white">
-                                    <div
-                                        class="position-relative z-index-2 p-40px pt-25px pb-15px border-bottom border-dark-opacity">
-                                        <i class="features-icon line-icon-Archery-2 d-block icon-extra-large"></i>
-                                        <a href="s10Fade Margin.html"
-                                            class="fw-600 d-inline-block mb-5px text-dark-gray fs-18">Fade Margin Improvement</a>
-                                        <!-- <p class="w-80 lg-w-100 fs-16 mx-auto mb-15px lg-mb-10px text-light-opacity">Lorem ipsum simply dummy text of amet consectetur.</p> -->
-                                    </div>
-                                    <a href="s10Fade Margin.html"
-                                        class="btn btn-link btn-hover-animation-switch btn-small fw-700 text-dark-gray text-uppercase p-20px z-index-1">
-                                        <span>
-                                            <span class="btn-text">Explore services</span>
-                                            <span class="btn-icon"><i class="fa-solid fa-arrow-right"></i></span>
-                                            <span class="btn-icon"><i class="fa-solid fa-arrow-right"></i></span>
-                                        </span>
-                                    </a>
-                                    <div class="box-overlay bg-base-color"></div>
-                                </figcaption>
-                            </figure>
-                        </div>
-                    </div>
-                    <!-- end interactive banner item -->
-                    <!-- start interactive banner item -->
-
-
-
-                    <div class="col interactive-banner-style-02 hover-box dark-hover md-mb-30px">
-                        <div
-                            class="h-100 text-center position-relative border-radius-6px box-shadow-quadruple-large overflow-hidden">
-                            <figure class="m-0">
-                                <a href="s11Import and Export.html" class="position-relative d-block">
-                                    <img src="images/import export s.png" alt="" />
-                                    <div
-                                        class="label position-absolute right-20px top-20px bg-base-color fw-600 text-white text-uppercase border-radius-30px ps-15px pe-15px fs-11 ls-05px">
-                                        Discover</div>
-                                </a>
-                                <figcaption class="w-100 position-absolute bottom-0px bg-white">
-                                    <div
-                                        class="position-relative z-index-2 p-40px pt-25px pb-15px border-bottom border-dark-opacity">
-                                        <i class="features-icon line-icon-Coins d-block icon-extra-large"></i>
-                                        <a href="s11Import and Export.html"
-                                            class="fw-600 d-inline-block mb-5px text-dark-gray fs-18">Import and Export Services</a>
-                                        <!-- <p class="w-80 lg-w-100 fs-16 mx-auto mb-15px lg-mb-10px text-light-opacity">Lorem ipsum simply dummy text of amet consectetur.</p> -->
-                                    </div>
-                                    <a href="s11Import and Export.html"
-                                        class="btn btn-link btn-hover-animation-switch btn-small fw-700 text-dark-gray text-uppercase p-20px z-index-1">
-                                        <span>
-                                            <span class="btn-text">Explore services</span>
-                                            <span class="btn-icon"><i class="fa-solid fa-arrow-right"></i></span>
-                                            <span class="btn-icon"><i class="fa-solid fa-arrow-right"></i></span>
-                                        </span>
-                                    </a>
-                                    <div class="box-overlay bg-base-color"></div>
-                                </figcaption>
-                            </figure>
-                        </div>
-                    </div>
-
-                    <!-- end interactive banner item -->
-                    <!-- start interactive banner item -->
-
-                    <div class="col interactive-banner-style-02 hover-box dark-hover md-mb-30px">
-                        <div
-                            class="h-100 text-center position-relative border-radius-6px box-shadow-quadruple-large overflow-hidden">
-                            <figure class="m-0">
-                                <a href="s12Site Survey.html" class="position-relative d-block">
-                                    <img src="images/site survay.png" alt="" />
-                                    <div
-                                        class="label position-absolute right-20px top-20px bg-base-color fw-600 text-white text-uppercase border-radius-30px ps-15px pe-15px fs-11 ls-05px">
-                                        Modern</div>
-                                </a>
-                                <figcaption class="w-100 position-absolute bottom-0px bg-white">
-                                    <div
-                                        class="position-relative z-index-2 p-40px pt-25px pb-15px border-bottom border-dark-opacity">
-                                        <i class="features-icon line-icon-Bar-Chart3 d-block icon-extra-large"></i>
-                                        <a href="s12Site Survey.html"
-                                            class="fw-600 d-inline-block mb-5px text-dark-gray fs-18">Site Survey</a>
-                                        <!-- <p class="w-80 lg-w-100 fs-16 mx-auto mb-15px lg-mb-10px text-light-opacity">Lorem ipsum simply dummy text of amet consectetur.</p> -->
-                                    </div>
-                                    <a href="s12Site Survey.html"
-                                        class="btn btn-link btn-hover-animation-switch btn-small fw-700 text-dark-gray text-uppercase p-20px z-index-1">
-                                        <span>
-                                            <span class="btn-text">Explore services</span>
-                                            <span class="btn-icon"><i class="fa-solid fa-arrow-right"></i></span>
-                                            <span class="btn-icon"><i class="fa-solid fa-arrow-right"></i></span>
-                                        </span>
-                                    </a>
-                                    <div class="box-overlay bg-base-color"></div>
-                                </figcaption>
-                            </figure>
-                        </div>
-                    </div>
-                </div>
-                <!-- row 4 end -->
-
-
-
-                <!-- Row 5 start here -->
-                <div class="row row-cols-1 row-cols-xl-3 row-cols-lg-3 row-cols-md-2 row-cols-sm-1 justify-content-center mb-5 transition-inner-all"
-                    data-anime='{ "el": "childs", "translateY": [30, 0], "opacity": [0,1], "duration": 600, "delay":0, "staggervalue": 300, "easing": "easeOutQuad" }'>
-                    <!-- start interactive banner item -->
-                    <div class="col interactive-banner-style-02 hover-box dark-hover md-mb-30px">
-                        <div
-                            class="h-100 text-center position-relative border-radius-6px box-shadow-quadruple-large overflow-hidden">
-                            <figure class="m-0">
-                                <a href="s13Microwave Strengthening.html" class="position-relative d-block">
-                                    <img src="images/microwave.png" alt="" />
-                                    <div
-                                        class="label position-absolute right-20px top-20px bg-base-color fw-600 text-white text-uppercase border-radius-30px ps-15px pe-15px fs-11 ls-05px">
-                                        Creativity</div>
-                                </a>
-                                <figcaption class="w-100 position-absolute bottom-0px bg-white">
-                                    <div
-                                        class="position-relative z-index-2 p-40px pt-25px pb-15px border-bottom border-dark-opacity">
-                                        <i class="features-icon line-icon-Archery-2 d-block icon-extra-large"></i>
-                                        <a href="s13Microwave Strengthening.html"
-                                            class="fw-600 d-inline-block mb-5px text-dark-gray fs-18">Microwave Strengthening</a>
-                                        <!-- <p class="w-80 lg-w-100 fs-16 mx-auto mb-15px lg-mb-10px text-light-opacity">Lorem ipsum simply dummy text of amet consectetur.</p> -->
-                                    </div>
-                                    <a href="s13Microwave Strengthening.html"
-                                        class="btn btn-link btn-hover-animation-switch btn-small fw-700 text-dark-gray text-uppercase p-20px z-index-1">
-                                        <span>
-                                            <span class="btn-text">Explore services</span>
-                                            <span class="btn-icon"><i class="fa-solid fa-arrow-right"></i></span>
-                                            <span class="btn-icon"><i class="fa-solid fa-arrow-right"></i></span>
-                                        </span>
-                                    </a>
-                                    <div class="box-overlay bg-base-color"></div>
-                                </figcaption>
-                            </figure>
-                        </div>
-                    </div>
-                    <!-- end interactive banner item -->
-                    <!-- start interactive banner item -->
-
-
-
-                    <div class="col interactive-banner-style-02 hover-box dark-hover md-mb-30px">
-                        <div
-                            class="h-100 text-center position-relative border-radius-6px box-shadow-quadruple-large overflow-hidden">
-                            <figure class="m-0">
-                                <a href="s14Installation.html" class="position-relative d-block">
-                                    <img src="images/installationnew.jpeg" alt="" />
-                                    <div
-                                        class="label position-absolute right-20px top-20px bg-base-color fw-600 text-white text-uppercase border-radius-30px ps-15px pe-15px fs-11 ls-05px">
-                                        Discover</div>
-                                </a>
-                                <figcaption class="w-100 position-absolute bottom-0px bg-white">
-                                    <div
-                                        class="position-relative z-index-2 p-40px pt-25px pb-15px border-bottom border-dark-opacity">
-                                        <i class="features-icon line-icon-Coins d-block icon-extra-large"></i>
-                                        <a href="s14Installation.html"
-                                            class="fw-600 d-inline-block mb-5px text-dark-gray fs-18">Installation and Commissioning</a>
-                                        <!-- <p class="w-80 lg-w-100 fs-16 mx-auto mb-15px lg-mb-10px text-light-opacity">Lorem ipsum simply dummy text of amet consectetur.</p> -->
-                                    </div>
-                                    <a href="s14Installation.html"
-                                        class="btn btn-link btn-hover-animation-switch btn-small fw-700 text-dark-gray text-uppercase p-20px z-index-1">
-                                        <span>
-                                            <span class="btn-text">Explore services</span>
-                                            <span class="btn-icon"><i class="fa-solid fa-arrow-right"></i></span>
-                                            <span class="btn-icon"><i class="fa-solid fa-arrow-right"></i></span>
-                                        </span>
-                                    </a>
-                                    <div class="box-overlay bg-base-color"></div>
-                                </figcaption>
-                            </figure>
-                        </div>
-                    </div>
-
-                    <!-- end interactive banner item -->
-                    <!-- start interactive banner item -->
-
-                    <div class="col interactive-banner-style-02 hover-box dark-hover md-mb-30px">
-                        <div
-                            class="h-100 text-center position-relative border-radius-6px box-shadow-quadruple-large overflow-hidden">
-                            <figure class="m-0">
-                                <a href="s15Small Cell Installation.html" class="position-relative d-block">
-                                    <img src="images/cell tower installation.png" alt="" />
-                                    <div
-                                        class="label position-absolute right-20px top-20px bg-base-color fw-600 text-white text-uppercase border-radius-30px ps-15px pe-15px fs-11 ls-05px">
-                                        Modern</div>
-                                </a>
-                                <figcaption class="w-100 position-absolute bottom-0px bg-white">
-                                    <div
-                                        class="position-relative z-index-2 p-40px pt-25px pb-15px border-bottom border-dark-opacity">
-                                        <i class="features-icon line-icon-Bar-Chart3 d-block icon-extra-large"></i>
-                                        <a href="s15Small Cell Installation.html"
-                                            class="fw-600 d-inline-block mb-5px text-dark-gray fs-18">Small Cell Installation and Commissioning.</a>
-                                        <!-- <p class="w-80 lg-w-100 fs-16 mx-auto mb-15px lg-mb-10px text-light-opacity">Lorem ipsum simply dummy text of amet consectetur.</p> -->
-                                    </div>
-                                    <a href="s15Small Cell Installation.html"
-                                        class="btn btn-link btn-hover-animation-switch btn-small fw-700 text-dark-gray text-uppercase p-20px z-index-1">
-                                        <span>
-                                            <span class="btn-text">Explore services</span>
-                                            <span class="btn-icon"><i class="fa-solid fa-arrow-right"></i></span>
-                                            <span class="btn-icon"><i class="fa-solid fa-arrow-right"></i></span>
-                                        </span>
-                                    </a>
-                                    <div class="box-overlay bg-base-color"></div>
-                                </figcaption>
-                            </figure>
-                        </div>
-                    </div>
-                </div>
-                <!-- row 5 end -->
-
-
-
-
-
-                <img src="https://via.placeholder.com/5"
-                    class="position-absolute top-20 right-60px z-index-minus-1"
-                    data-bottom-top="transform: rotate(0deg) translateY(0)"
-                    data-top-bottom="transform:rotate(-15deg) translateY(0)" alt="" />
-                <div class="row justify-content-center g-0">
-                    <div class="col-auto text-center last-paragraph-no-margin icon-with-text-style-08">
-                       
-                    </div>
-                </div>
-            </div>
-        </section>
-
-
-
-
-
-
-        <!-- end section -->
-        <!-- start section -->
-
-        <!-- end section -->
-        <!-- start footer -->
-        <footer class="p-0 fs-16 border-top border-color-extra-medium-gray">
-            <div class="container">
-                <div class="row justify-content-center pt-6 sm-pt-40px">
-                    <!-- start footer column -->
-                    <div
-                        class="col-6 col-xl-3 col-lg-12 col-sm-6 last-paragraph-no-margin text-xl-start text-lg-center order-sm-1 lg-mb-50px sm-mb-30px">
-                        <a href="index.html" class="footer-logo mb-15px d-inline-block"><img
-                                src="images/demo-corporate-logo-black@2x.png    "
-                                data-at2x="images/demo-corporate-logo-black@2x.png" alt=""></a>
-                                
-                        <p class="lh-30 w-90 xl-w-100 mx-lg-auto mx-xl-0">Bodhitree Technologies Pvt. Ltd. is a leading provider of Network Lifecycle Management Solutions to Operators & Service Providers.
-
-                        </p>
-                        <div class="elements-social social-icon-style-02 mt-20px xs-mt-15px">
-                            <ul class="medium-icon dark">
-                                <li class="my-0"><a class="facebook" href="https://www.facebook.com/people/Bodhitree-Technologies-Pvt-Ltd/100057190400397/" target="_blank"><i
-                                            class="fa-brands fa-facebook-f"></i></a></li>
-                                <li class="my-0"><a class="dribbble" href="https://www.linkedin.com/uas/login?session_redirect=https%3A%2F%2Fwww.linkedin.com%2Fcompany%2F13368154%2Fadmin%2F" target="_blank"><i
-                                            class="fa-brands fa-linkedin"></i></a></li>
-                                <li class="my-0"><a class="twitter" href="https://twitter.com/Bodhi09881061" target="_blank"><i
-                                            class="fa-brands fa-twitter"></i></a></li>
-                                <li class="my-0"><a class="instagram" href="https://www.instagram.com/bodhi.tree2020/" target="_blank"><i
-                                            class="fa-brands fa-instagram"></i></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <!-- end footer column -->
-                    <!-- start footer column -->
-                    <div class="col-6 col-xl-2 col-lg-3 col-sm-4 xs-mb-30px order-sm-3 order-lg-2">
-                        <span class="fs-17 fw-600 d-block text-dark-gray mb-5px" style="color: red;">Quick Link</span>
-                        <ul>
-                            <li><a href="index.html">Home</a></li>
-                            <li><a href="demo-corporate-about.html">About</a>
-                               
-                            </li>
-                            <li><a href="demo-corporate-services.html">Services</a>
-                                <div
-                                class="bg-dark-gray fw-600 text-white lh-22 text-uppercase border-radius-30px ps-10px pe-10px fs-10 ms-10px d-inline-block align-middle">
-                                Hot</div></li>
-                           
-                        </ul>
-                    </div>
-                    <!-- end footer column -->
-                    <!-- start footer column -->
-                    <div class="col-6 col-xl-2 col-lg-3 col-sm-4 xs-mb-30px order-sm-4 order-lg-3">
-                        <span class="fs-17 fw-600 d-block text-dark-gray mb-5px" style="color: red;">Quick Link</span>
-                        <ul>
-                            <li><a href="gallery.html">Gallery</a></li>
-                            <li><a href="product.html">Product</a></li>
-                            <li><a href="career.html">Career</a></li>
-                            <li><a href="demo-corporate-contact.html">Contact</a></li>
-                        </ul>
-                    </div>
-                    <!-- end footer column -->
-                    <!-- start footer column -->
-                    
-                    <!-- end footer column -->
-                    <!-- start footer column -->
-                    <div class="col-xl-3 col-lg-3 col-sm-6 md-mb-50px sm-mb-30px xs-mb-0 order-sm-2 order-lg-5">
-                       <img src="images/qrcode.png" alt="">
-                    </div>
-                    <!-- end footer column -->
-                </div>
-                <div class="row justify-content-center align-items-center pt-2">
-                    <!-- start divider -->
-                    <div class="col-12">
-                        <div class="divider-style-03 divider-style-03-01 border-color-transparent-white-light"></div>
-                    </div>
-                    <!-- end divider -->
-                    <!-- start copyright -->
-                    <div
-                        class="col-lg-5 pt-35px pb-35px md-pt-0 order-2 order-lg-1 text-center text-lg-start last-paragraph-no-margin">
-                        <p>&copy; 2024 All Rights Reserved. Developed By <a href="http://maftechnology.com/" target="_blank"
-                                class="text-dark-gray fw-600 text-decoration-line-bottom">Maftechnology</a></p>
-                    </div>
-                    <!-- end copyright -->
-                    <!-- start footer menu -->
-                    
-                    <!-- end footer menu -->
-                </div>
-            </div>
-        </footer>
-        <!-- end footer -->
-        <!-- start scroll progress -->
-        <div class="scroll-progress d-none d-xxl-block">
-            <a href="#" class="scroll-top" aria-label="scroll">
-                <span class="scroll-text">Scroll</span><span class="scroll-line"><span
-                        class="scroll-point"></span></span>
-            </a>
         </div>
-        <!-- end scroll progress -->
+    </section>
+    <!-- end page title -->
+    <!-- start section -->
+    <div class="container" id="down-section">
+        <section>
+            <div class="filters" id="filters">
+                <button class="chip active" data-filter="all">All</button>
+                <button class="chip" data-filter="optimization">Network Optimization</button>
+                <button class="chip" data-filter="repair">Repair & Maintenance</button>
+                <button class="chip" data-filter="field">Field Services</button>
+                <button class="chip" data-filter="logistics">Logistics & Support</button>
+                <button class="chip" data-filter="deployment">Deployment</button>
+            </div>
+        </section>
+
+
+        <section class="grid" id="grid">
+            <!-- 1 -->
+            <article class="card" data-category="optimization">
+                <div class="media">
+                    <span class="cat">Optimization</span>
+                    <img loading="lazy" alt="Network analytics dashboard"
+                        src="img/services/network optimaze.jpeg" />
+                </div>
+                <div class="content">
+                    <div class="title">Network Assets Management & Optimization</div>
+                    <p class="desc">Data-driven asset visibility, lifecycle tracking, and performance optimization
+                        to cut OPEX and
+                        improve uptime.</p>
+                </div>
+                <div class="actions"><a class="cta" href="">Explore services →</a></div>
+            </article>
+
+            <!-- 2 -->
+            <article class="card" data-category="repair">
+                <div class="media">
+                    <span class="cat">Repair</span>
+                    <img loading="lazy" alt="Engineer repairing PCB"
+                        src="images/RepairRefurbishment.png" />
+                </div>
+                <div class="content">
+                    <div class="title">Repair & Refurbishment of Telecom Equipment</div>
+                    <p class="desc">Board-level diagnostics, component replacement, and refurbishment with QA to
+                        extend equipment
+                        lifecycle.</p>
+                </div>
+                <div class="actions"><a class="cta" href="">Explore services →</a></div>
+            </article>
+
+            <!-- 3 -->
+            <article class="card" data-category="repair">
+                <div class="media">
+                    <span class="cat">Repair</span>
+                    <img loading="lazy" alt="Microwave/GSM antennas on tower"
+                        src="img/services/gsm antina.jpeg" />
+                </div>
+                <div class="content">
+                    <div class="title">Repair of Microwave and GSM Antennas</div>
+                    <p class="desc">Precision repair & calibration for microwave/GSM antenna systems to restore link
+                        stability and
+                        gain.</p>
+                </div>
+                <div class="actions"><a class="cta" href="">Explore services →</a></div>
+            </article>
+
+            <!-- 4 -->
+            <article class="card" data-category="field">
+                <div class="media">
+                    <span class="cat">O&M</span>
+                    <img loading="lazy" alt="Operations & maintenance team"
+                        src="img/services/opration mainten.jpeg" />
+                </div>
+                <div class="content">
+                    <div class="title">Operations & Maintenance Solutions</div>
+                    <p class="desc">End-to-end O&M with preventive maintenance, SLAs, and 24×7 support for maximum
+                        network
+                        availability.</p>
+                </div>
+                <div class="actions"><a class="cta" href="">Explore services →</a></div>
+            </article>
+
+            <!-- 5 -->
+            <article class="card" data-category="field">
+                <div class="media">
+                    <span class="cat">Field</span>
+                    <img loading="lazy" alt="Engineer inspecting telecom cabinet"
+                        src="img/services/field services  and dig.jpeg" />
+                </div>
+                <div class="content">
+                    <div class="title">Field Services & Fault Diagnosis</div>
+                    <p class="desc">Rapid on-site troubleshooting, health checks, and RCA to minimize downtime and
+                        truck rolls.
+                    </p>
+                </div>
+                <div class="actions"><a class="cta" href="">Explore services →</a></div>
+            </article>
+
+            <!-- 6 -->
+            <article class="card" data-category="logistics">
+                <div class="media">
+                    <span class="cat">Logistics</span>
+                    <img loading="lazy" alt="Warehouse with racks"
+                        src="img/services/where house.jpeg" />
+                </div>
+                <div class="content">
+                    <div class="title">Warehouse Services and Reverse Logistics</div>
+                    <p class="desc">Secure storage, RMA handling, reverse logistics, and real-time inventory
+                        visibility.</p>
+                </div>
+                <div class="actions"><a class="cta" href="">Explore services →</a></div>
+            </article>
+
+            <!-- 7 -->
+            <article class="card" data-category="logistics">
+                <div class="media">
+                    <span class="cat">Logistics</span>
+                    <img loading="lazy" alt="Organized spare parts"
+                        src="img/services/spar part" />
+                </div>
+                <div class="content">
+                    <div class="title">Spare Parts Management</div>
+                    <p class="desc">Optimized spares planning, fast dispatch, and SLA-based replacement to keep
+                        networks running.
+                    </p>
+                </div>
+                <div class="actions"><a class="cta" href="">Explore services →</a></div>
+            </article>
+
+            <!-- 8 -->
+            <article class="card" data-category="repair">
+                <div class="media">
+                    <span class="cat">Repair</span>
+                    <img loading="lazy" alt="Transformer repair"
+                        src="img/services/repair and transformer.jpeg" />
+                </div>
+                <div class="content">
+                    <div class="title">Repair & Transformer Repair Services</div>
+                    <p class="desc">Power equipment diagnostics, rewinding, and load testing with safety and
+                        compliance checks.
+                    </p>
+                </div>
+                <div class="actions"><a class="cta" href="">Explore services →</a></div>
+            </article>
+
+            <!-- 9 -->
+            <article class="card" data-category="field">
+                <div class="media">
+                    <span class="cat">Manpower</span>
+                    <img loading="lazy" alt="Team of telecom engineers"
+                        src="img/services/technical men power supply" />
+                </div>
+                <div class="content">
+                    <div class="title">Technical Manpower Supply</div>
+                    <p class="desc">Skilled L1–L3 engineers, riggers, and PMO resources on demand for rollout and
+                        maintenance.</p>
+                </div>
+                <div class="actions"><a class="cta" href="">Explore services →</a></div>
+            </article>
+
+            <!-- 10 -->
+            <article class="card" data-category="optimization">
+                <div class="media">
+                    <span class="cat">Optimization</span>
+                    <img loading="lazy" alt="Signal analytics"
+                        src="img/services/fade margin.jpeg" />
+                </div>
+                <div class="content">
+                    <div class="title">Fade Margin Improvement</div>
+                    <p class="desc">Link budget review, alignment, and interference mitigation to boost reliability
+                        in fading
+                        conditions.</p>
+                </div>
+                <div class="actions"><a class="cta" href="">Explore services →</a></div>
+            </article>
+
+            <!-- 11 -->
+            <article class="card" data-category="logistics">
+                <div class="media">
+                    <span class="cat">Logistics</span>
+                    <img loading="lazy" alt="Cargo containers on ship"
+                        src="img/services/import export.jpeg" />
+                </div>
+                <div class="content">
+                    <div class="title">Import and Export Services</div>
+                    <p class="desc">Customs-ready import/export for telecom gear with documentation, insurance, and
+                        tracking.</p>
+                </div>
+                <div class="actions"><a class="cta" href="">Explore services →</a></div>
+            </article>
+
+            <!-- 12 -->
+            <article class="card" data-category="field">
+                <div class="media">
+                    <span class="cat">Survey</span>
+                    <img loading="lazy" alt="Surveyor with tripod"
+                        src="img/services/site survey.jpeg" />
+                </div>
+                <div class="content">
+                    <div class="title">Site Survey</div>
+                    <p class="desc">Detailed LOS, power, space, and structural audits with as-built documentation
+                        for deployment.
+                    </p>
+                </div>
+                <div class="actions"><a class="cta" href="">Explore services →</a></div>
+            </article>
+
+            <!-- 13 -->
+            <article class="card" data-category="optimization">
+                <div class="media">
+                    <span class="cat">Optimization</span>
+                    <img loading="lazy" alt="Microwave links on mast"
+                        src="images/microwave.png" />
+                </div>
+                <div class="content">
+                    <div class="title">Microwave Strengthening</div>
+                    <p class="desc">Path engineering, polarization, and QoS tuning to strengthen capacity and reduce
+                        outages.</p>
+                </div>
+                <div class="actions"><a class="cta" href="">Explore services →</a></div>
+            </article>
+
+            <!-- 14 -->
+            <article class="card" data-category="deployment">
+                <div class="media">
+                    <span class="cat">Deployment</span>
+                    <img loading="lazy" alt="Engineers installing equipment"
+                        src="images/installationnew.jpeg" />
+                </div>
+                <div class="content">
+                    <div class="title">Installation and Commissioning</div>
+                    <p class="desc">Turnkey installation, integration, and acceptance testing with safety-first
+                        practices.</p>
+                </div>
+                <div class="actions"><a class="cta" href="">Explore services →</a></div>
+            </article>
+
+            <!-- 15 -->
+            <article class="card" data-category="deployment">
+                <div class="media">
+                    <span class="cat">Deployment</span>
+                    <img loading="lazy" alt="Small cell antenna setup"
+                        src="img/services/small cell.jpeg" />
+                </div>
+                <div class="content">
+                    <div class="title">Small Cell Installation and Commissioning</div>
+                    <p class="desc">Rapid small cell rollout to densify coverage and enhance capacity in urban
+                        hotspots.</p>
+                </div>
+                <div class="actions"><a class="cta" href="">Explore services →</a></div>
+            </article>
+
+        </section>
+    </div>
+    <!-- end section -->
+    <!-- start section -->
+
+    <!-- end section -->
+    <!-- start footer -->
+    <footer class="p-0 fs-16 border-top border-color-extra-medium-gray">
+        <div class="container">
+            <div class="row justify-content-center pt-6 sm-pt-40px">
+                <!-- start footer column -->
+                <div
+                    class="col-6 col-xl-3 col-lg-12 col-sm-6 last-paragraph-no-margin text-xl-start text-lg-center order-sm-1 lg-mb-50px sm-mb-30px">
+                    <a href="index.html" class="footer-logo mb-15px d-inline-block"><img
+                            src="images/demo-corporate-logo-black@2x.png    "
+                            data-at2x="images/demo-corporate-logo-black@2x.png" alt=""></a>
+
+                    <p class="lh-30 w-90 xl-w-100 mx-lg-auto mx-xl-0">Bodhitree Technologies Pvt. Ltd. is a leading
+                        provider of Network Lifecycle Management Solutions to Operators & Service Providers.
+
+                    </p>
+                    <div class="elements-social social-icon-style-02 mt-20px xs-mt-15px">
+                        <ul class="medium-icon dark">
+                            <li class="my-0"><a class="facebook"
+                                    href="https://www.facebook.com/people/Bodhitree-Technologies-Pvt-Ltd/100057190400397/"
+                                    target="_blank"><i class="fa-brands fa-facebook-f"></i></a></li>
+                            <li class="my-0"><a class="dribbble"
+                                    href="https://www.linkedin.com/uas/login?session_redirect=https%3A%2F%2Fwww.linkedin.com%2Fcompany%2F13368154%2Fadmin%2F"
+                                    target="_blank"><i class="fa-brands fa-linkedin"></i></a></li>
+                            <li class="my-0"><a class="twitter" href="https://twitter.com/Bodhi09881061"
+                                    target="_blank"><i class="fa-brands fa-twitter"></i></a></li>
+                            <li class="my-0"><a class="instagram" href="https://www.instagram.com/bodhi.tree2020/"
+                                    target="_blank"><i class="fa-brands fa-instagram"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- end footer column -->
+                <!-- start footer column -->
+                <div class="col-6 col-xl-2 col-lg-3 col-sm-4 xs-mb-30px order-sm-3 order-lg-2">
+                    <span class="fs-17 fw-600 d-block text-dark-gray mb-5px" style="color: red;">Quick Link</span>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="demo-corporate-about.html">About</a>
+
+                        </li>
+                        <li><a href="demo-corporate-services.html">Services</a>
+                            <div
+                                class="bg-dark-gray fw-600 text-white lh-22 text-uppercase border-radius-30px ps-10px pe-10px fs-10 ms-10px d-inline-block align-middle">
+                                Hot</div>
+                        </li>
+
+                    </ul>
+                </div>
+                <!-- end footer column -->
+                <!-- start footer column -->
+                <div class="col-6 col-xl-2 col-lg-3 col-sm-4 xs-mb-30px order-sm-4 order-lg-3">
+                    <span class="fs-17 fw-600 d-block text-dark-gray mb-5px" style="color: red;">Quick Link</span>
+                    <ul>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="product.html">Product</a></li>
+                        <li><a href="career.html">Career</a></li>
+                        <li><a href="demo-corporate-contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <!-- end footer column -->
+                <!-- start footer column -->
+
+                <!-- end footer column -->
+                <!-- start footer column -->
+                <div class="col-xl-3 col-lg-3 col-sm-6 md-mb-50px sm-mb-30px xs-mb-0 order-sm-2 order-lg-5">
+                    <img src="images/qrcode.png" alt="">
+                </div>
+                <!-- end footer column -->
+            </div>
+            <div class="row justify-content-center align-items-center pt-2">
+                <!-- start divider -->
+                <div class="col-12">
+                    <div class="divider-style-03 divider-style-03-01 border-color-transparent-white-light"></div>
+                </div>
+                <!-- end divider -->
+                <!-- start copyright -->
+                <div
+                    class="col-lg-5 pt-35px pb-35px md-pt-0 order-2 order-lg-1 text-center text-lg-start last-paragraph-no-margin">
+                    <p>&copy; 2024 All Rights Reserved. Developed By <a href="http://maftechnology.com/" target="_blank"
+                            class="text-dark-gray fw-600 text-decoration-line-bottom">Maftechnology</a></p>
+                </div>
+                <!-- end copyright -->
+                <!-- start footer menu -->
+
+                <!-- end footer menu -->
+            </div>
+        </div>
+    </footer>
+    <!-- end footer -->
+    <!-- start scroll progress -->
+    <div class="scroll-progress d-none d-xxl-block">
+        <a href="#" class="scroll-top" aria-label="scroll">
+            <span class="scroll-text">Scroll</span><span class="scroll-line"><span class="scroll-point"></span></span>
+        </a>
+    </div>
+    <!-- end scroll progress -->
     </div>
     <!-- javascript libraries -->
     <script type="text/javascript" src="js/jquery.js"></script>
     <script type="text/javascript" src="js/vendors.min.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
+    <script>
+        const chips = document.querySelectorAll('.chip');
+        const cards = document.querySelectorAll('.card');
+        chips.forEach(chip => chip.addEventListener('click', () => {
+            chips.forEach(c => c.classList.remove('active'));
+            chip.classList.add('active');
+            const f = chip.dataset.filter;
+            cards.forEach(card => {
+                const show = f === 'all' || card.dataset.category === f;
+                card.style.display = show ? 'flex' : 'none';
+            })
+        }))
+    </script>
 </body>
 
 </html>

@@ -35,78 +35,64 @@
     <script type="text/javascript" src="revolution/js/extensions/revolution.extension.layeranimation.min.js"></script>
     <script type="text/javascript" src="revolution/js/extensions/revolution.extension.navigation.min.js"></script>
     <script type="text/javascript" src="revolution/js/extensions/revolution.extension.parallax.min.js"></script>
+    <style>
+        body {
+                font-family: Arial, sans-serif;
+                margin: 0;
+                padding: 40px;
+                background: #f9f9f9;
+                text-align: center;
+            }
+    </style>
 </head>
 
 <body data-mobile-nav-trigger-alignment="right" data-mobile-nav-style="modern" data-mobile-nav-bg-color="#242E45">
     <div class="box-layout">
         <!-- start header -->
         <header>
-
-
             <!-- start navigation -->
-            <nav class="navbar navbar-expand-lg header-light bg-white disable-fixed">
+            <nav class="navbar navbar-expand-lg header-light bg-white shadow-sm fixed-top">
                 <div class="container-fluid">
+
+                    <!-- Logo -->
                     <div class="col-auto col-xl-3 col-lg-2 me-lg-0 me-auto">
                         <a class="navbar-brand" href="index.html">
                             <img src="images/demo-corporate-logo-black.png"
-                                data-at2x="images/demo-corporate-logo-black@2x.png" alt="" class="default-logo">
+                                data-at2x="images/demo-corporate-logo-black@2x.png" alt="Bodhitree Technologies Logo"
+                                class="default-logo">
                             <img src="images/demo-corporate-logo-black.png"
-                                data-at2x="images/demo-corporate-logo-black@2x.png" alt="" class="alt-logo">
+                                data-at2x="images/demo-corporate-logo-black@2x.png" alt="Bodhitree Technologies Logo"
+                                class="alt-logo">
                             <img src="images/demo-corporate-logo-black.png"
-                                data-at2x="images/demo-corporate-logo-black@2x.png" alt="" class="mobile-logo">
+                                data-at2x="images/demo-corporate-logo-black@2x.png" alt="Bodhitree Technologies Logo"
+                                class="mobile-logo">
                         </a>
                     </div>
-                    <div class="col-auto col-xl-6 col-lg-8 menu-order position-static">
+
+                    <!-- Navigation Menu -->
+                    <div class="col-auto col-xl-9 col-lg-10 menu-order position-static">
                         <button class="navbar-toggler float-start" type="button" data-bs-toggle="collapse"
                             data-bs-target="#navbarNav" aria-controls="navbarNav" aria-label="Toggle navigation">
                             <span class="navbar-toggler-line"></span>
                             <span class="navbar-toggler-line"></span>
                             <span class="navbar-toggler-line"></span>
-                            <span class="navbar-toggler-line"></span>
                         </button>
-                        <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
-                            <ul class="navbar-nav">
+
+                        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                            <ul class="navbar-nav fw-500">
                                 <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
                                 <li class="nav-item"><a href="demo-corporate-about.html" class="nav-link">About</a></li>
-                                <li class="nav-item dropdown dropdown-with-icon-style02">
-                                    <a href="demo-corporate-services.html" class="nav-link">Services</a>
-                                    
-                                </li>
-                                <li class="nav-item"><a href="our product.html" class="nav-link">Products</a></li>
-
-                                <li class="nav-item dropdown dropdown-with-icon-style02">
-                                    <a href="gallery.html" class="nav-link">Gallery</a>
-                                    
-                                       
-                                    
-                                </li>
-
-                                <li class="nav-item"><a href="career.html" class="nav-link">Career</a></li>
-
+                                <li class="nav-item"><a href="demo-corporate-services.html"
+                                        class="nav-link">Services</a></li>
+                                <li class="nav-item"><a href="new_prod.html" class="nav-link">Products</a></li>
+                                <li class="nav-item"><a href="gallery.html" class="nav-link">Gallery</a></li>
+                                <!-- <li class="nav-item"><a href="career.html" class="nav-link">Career</a></li> -->
                                 <li class="nav-item"><a href="demo-corporate-contact.html" class="nav-link">Contact</a>
                                 </li>
                             </ul>
                         </div>
                     </div>
-                    <div class="col-auto col-xl-3 col-lg-2 text-end md-pe-0">
-                        <div class="header-icon">
-                           
-                            <div class="elements-social social-icon-style-02 mt-20px xs-mt-15px">
-                                <ul class="medium-icon dark">
-                                    <li class="my-0"><a class="facebook" href="https://www.facebook.com/people/Bodhitree-Technologies-Pvt-Ltd/100057190400397/" target="_blank"><i
-                                                class="fa-brands fa-facebook-f"></i></a></li>
-                                    <li class="my-0"><a class="dribbble" href="https://www.linkedin.com/uas/login?session_redirect=https%3A%2F%2Fwww.linkedin.com%2Fcompany%2F13368154%2Fadmin%2F" target="_blank"><i
-                                                class="fa-brands fa-linkedin"></i></a></li>
-                                    <li class="my-0"><a class="twitter" href="https://twitter.com/Bodhi09881061" target="_blank"><i
-                                                class="fa-brands fa-twitter"></i></a></li>
-                                    <li class="my-0"><a class="instagram" href="https://www.instagram.com/bodhi.tree2020/" target="_blank"><i
-                                                class="fa-brands fa-instagram"></i></a></li>
-                                </ul>
-                            </div>
 
-                           
-                        </div>
-                    </div>
                 </div>
             </nav>
             <!-- end navigation -->
@@ -130,8 +116,8 @@
 
 
                             <!-- slide's main background image -->
-                            <img src="images/homebanner1.png" alt="Image" data-bgposition="center center"
-                                data-bgfit="cover" data-bgrepeat="no-repeat" class="rev-slidebg" data-no-retina>
+                            <img src="img/pics/1.png" alt="Image" data-bgposition="center center" data-bgfit="cover"
+                                data-bgrepeat="no-repeat" class="rev-slidebg" data-no-retina>
 
 
                             <!-- start overlay layer -->
@@ -210,7 +196,8 @@
                                             data-paddingtop="[0,0,0,0]" data-paddingright="[0,0,0,0]"
                                             data-paddingbottom="[25,25,10,10]" data-paddingleft="[0,0,0,0]"
                                             style="word-break: initial;">
-                                            <i class="bi bi-award pe-5px icon-small"></i>We Believe in - Reduce, Repair & Reuse
+                                            <i class="bi bi-award pe-5px icon-small"></i>We Believe in - Reduce, Repair
+                                            & Reuse
                                         </div>
                                         <!-- end subtitle layer -->
                                         <!-- start title layer -->
@@ -253,8 +240,10 @@
                                             data-textAlign="['center','center','center','center']"
                                             data-paddingtop="[0,0,0,0]" data-paddingright="[0,0,0,0]"
                                             data-paddingbottom="[36,36,60,40]" data-paddingleft="[0,0,0,0]">
-                                            <b style="font-size: 17px;">Our mission is -To provide the right customize hardware and services for the right price at the right time to our customers. Ultimately  <bold>YOUR SUCCESS IS OUR BUSINESS </bold> . </b>
-                                           
+                                            <b style="font-size: 17px;">Our mission is -To provide the right customize
+                                                hardware and services for the right price at the right time to our
+                                                customers. Ultimately <bold>YOUR SUCCESS IS OUR BUSINESS </bold> . </b>
+
                                         </div>
                                         <!-- end text layer -->
                                         <!-- start button layer -->
@@ -322,8 +311,8 @@
                             data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10=""
                             data-description="">
                             <!-- slide's main background image -->
-                            <img src="images/homebanner1.png" alt="Image" data-bgposition="center center"
-                                data-bgfit="cover" data-bgrepeat="no-repeat" class="rev-slidebg" data-no-retina>
+                            <img src="img/pics/2.png" alt="Image" data-bgposition="center center" data-bgfit="cover"
+                                data-bgrepeat="no-repeat" class="rev-slidebg" data-no-retina>
                             <!-- start overlay layer -->
                             <div class="tp-caption tp-shape tp-shapewrapper " id="slide-2-layer-01"
                                 data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
@@ -400,7 +389,8 @@
                                             data-paddingtop="[0,0,0,0]" data-paddingright="[0,0,0,0]"
                                             data-paddingbottom="[25,25,10,10]" data-paddingleft="[0,0,0,0]"
                                             style="word-break: initial;">
-                                            <i class="bi bi-award pe-5px icon-small"></i>We Believe in - Reduce, Repair & Reuse.
+                                            <i class="bi bi-award pe-5px icon-small"></i>We Believe in - Reduce, Repair
+                                            & Reuse.
                                         </div>
                                         <!-- end subtitle layer -->
                                         <!-- start title layer -->
@@ -443,7 +433,9 @@
                                             data-textAlign="['center','center','center','center']"
                                             data-paddingtop="[0,0,0,0]" data-paddingright="[0,0,0,0]"
                                             data-paddingbottom="[36,36,60,40]" data-paddingleft="[0,0,0,0]">
-                                            <b style="font-size: 17px;">Our mission is -To provide the right customize hardware and services for the right price at the right time to our customers. Ultimately  <bold>YOUR SUCCESS IS OUR BUSINESS </bold> . </b>
+                                            <b style="font-size: 17px;">Our mission is -To provide the right customize
+                                                hardware and services for the right price at the right time to our
+                                                customers. Ultimately <bold>YOUR SUCCESS IS OUR BUSINESS </bold> . </b>
                                         </div>
                                         <!-- end text layer -->
                                         <!-- start button layer -->
@@ -511,8 +503,8 @@
                             data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10=""
                             data-description="">
                             <!-- slide's main background image -->
-                            <img src="images/homebanner1.png" alt="Image" data-bgposition="center center"
-                                data-bgfit="cover" data-bgrepeat="no-repeat" class="rev-slidebg" data-no-retina>
+                            <img src="img/pics/3.webp" alt="Image" data-bgposition="center center" data-bgfit="cover"
+                                data-bgrepeat="no-repeat" class="rev-slidebg" data-no-retina>
                             <!-- start overlay layer -->
                             <div class="tp-caption tp-shape tp-shapewrapper " id="slide-3-layer-01"
                                 data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
@@ -589,7 +581,8 @@
                                             data-paddingtop="[0,0,0,0]" data-paddingright="[0,0,0,0]"
                                             data-paddingbottom="[25,25,10,10]" data-paddingleft="[0,0,0,0]"
                                             style="word-break: initial;">
-                                            <i class="bi bi-award pe-5px icon-small"></i>We Believe in - Reduce, Repair & Reuse.
+                                            <i class="bi bi-award pe-5px icon-small"></i>We Believe in - Reduce, Repair
+                                            & Reuse.
                                         </div>
                                         <!-- end subtitle layer -->
                                         <!-- start title layer -->
@@ -632,7 +625,9 @@
                                             data-textAlign="['center','center','center','center']"
                                             data-paddingtop="[0,0,0,0]" data-paddingright="[0,0,0,0]"
                                             data-paddingbottom="[36,36,60,40]" data-paddingleft="[0,0,0,0]">
-                                            <b style="font-size: 17px;">Our mission is -To provide the right customize hardware and services for the right price at the right time to our customers. Ultimately  <bold>YOUR SUCCESS IS OUR BUSINESS </bold> . </b>
+                                            <b style="font-size: 17px;">Our mission is -To provide the right customize
+                                                hardware and services for the right price at the right time to our
+                                                customers. Ultimately <bold>YOUR SUCCESS IS OUR BUSINESS </bold> . </b>
                                         </div>
                                         <!-- end text layer -->
                                         <!-- start button layer -->
@@ -784,8 +779,15 @@
                         <span
                             class="ps-25px pe-25px mb-20px text-uppercase text-base-color fs-14 lh-42px fw-700 border-radius-100px bg-gradient-very-light-gray-transparent d-inline-block">Creative
                             approach</span>
-                        <h3 class="text-dark-gray fw-700 ls-minus-1px">Bodhitree Technologies - Pioneering Telecom Services Since 2008.</h3>
-                        <p class="w-80 xl-w-90 lg-w-100 mb-40px sm-mb-25px">Founded in 2008, Bodhitree Technologies Pvt. Ltd. has specialized in developing innovative asset management solutions that transform un-usable assets into significant financial savings. Today, we continue to deliver cost-effective production technologies for a wide range of asset managers, enhancing both asset productivity and operational control. At Bodhitree Technologies, we are dedicated to exceeding the expectations of our customers and stakeholders while adhering to all statutory and regulatory requirements related to our products and services.</p>
+                        <h3 class="text-dark-gray fw-700 ls-minus-1px">Bodhitree Technologies - Pioneering Telecom
+                            Services Since 2008.</h3>
+                        <p class="w-80 xl-w-90 lg-w-100 mb-40px sm-mb-25px">Founded in 2008, Bodhitree Technologies Pvt.
+                            Ltd. has specialized in developing innovative asset management solutions that transform
+                            un-usable assets into significant financial savings. Today, we continue to deliver
+                            cost-effective production technologies for a wide range of asset managers, enhancing both
+                            asset productivity and operational control. At Bodhitree Technologies, we are dedicated to
+                            exceeding the expectations of our customers and stakeholders while adhering to all statutory
+                            and regulatory requirements related to our products and services.</p>
                         <a href="demo-corporate-about.html"
                             class="btn btn-large btn-dark-gray btn-hover-animation-switch btn-box-shadow btn-rounded me-25px xs-me-0">
                             <span>
@@ -799,15 +801,14 @@
                                 000</a></span> -->
                     </div>
                 </div>
-                
+
             </div>
         </section>
         <!-- end section -->
         <!-- start section -->
         <section
             class="overflow-hidden bg-regal-blue position-relative border-radius-6px lg-border-radius-0px z-index-0">
-            <img src="images/service-bg-i.jpg"
-                class="position-absolute top-minus-150px left-minus-30px z-index-minus-1"
+            <img src="images/service-bg-i.jpg" class="position-absolute top-minus-150px left-minus-30px z-index-minus-1"
                 data-bottom-top="transform: rotate(0deg) translateY(0)"
                 data-top-bottom="transform:rotate(-20deg) translateY(0)" alt="" />
             <div class="container">
@@ -819,12 +820,15 @@
                         <h3 class="text-white fw-700 mb-0 ls-minus-1px">Bodhitree Technologies Services</h3>
                     </div>
                     <div class="col-lg-5 last-paragraph-no-margin md-mb-20px">
-                        <p class="w-85 md-w-100" class="hover-text1"> With years of industry experience, our team of professionals is well-equipped to handle the complexities of telecommunications and technology.</p>
+                        <p class="w-85 md-w-100" class="hover-text1"> With years of industry experience, our team of
+                            professionals is well-equipped to handle the complexities of telecommunications and
+                            technology.</p>
                         <style>
                             .w-85 {
                                 color: white;
                                 transition: color 0.3s;
                             }
+
                             .w-85:hover {
                                 color: rgb(69, 118, 255);
                             }
@@ -1059,7 +1063,7 @@
                         </div>
                     </div>
                 </div>
-                
+
             </div>
         </section>
         <!-- end section -->
@@ -1071,146 +1075,148 @@
 
 
 
- <!-- Start Partner Logo section 1  -->
+        <!-- Start Partner Logo section 1  -->
 
- <section class="pt-0">
-    <div class="container">
-        <div class="row justify-content-center">
-            
-        </div>
-        <div class="row position-relative clients-style-08 mt-25px" data-anime='{ "translateX": [0, 0], "opacity": [0,1], "duration": 800, "delay":100, "staggervalue": 150, "easing": "easeOutQuad" }'>
-            <div class="col swiper text-center feather-shadow" data-slider-options='{ "slidesPerView": 2, "spaceBetween":0, "speed": 3000, "loop": true, "pagination": { "el": ".slider-four-slide-pagination-2", "clickable": false }, "allowTouchMove": false, "autoplay": { "delay":0, "disableOnInteraction": false, "pauseOnMouseEnter": false}, "navigation": { "nextEl": ".slider-four-slide-next-2", "prevEl": ".slider-four-slide-prev-2" }, "keyboard": { "enabled": true, "onlyInViewport": true }, "breakpoints": { "1200": { "slidesPerView": 5 }, "768": { "slidesPerView": 3 }, "576": { "slidesPerView": 2 } }, "effect": "slide" }'>
-                <div class="swiper-wrapper marquee-slide">
-                    <!-- start client item -->
-                    <div class="swiper-slide" style="margin: 35px;">
-                        <a href="#"><img src="images/p1.jpeg" alt="" /></a>
-                    </div>
-                    <!-- end client item -->
-                    <!-- start client item -->
-                      <!-- start client item -->
-                      <div class="swiper-slide" style="margin: 35px;">
-                        <a href="#"><img src="images/p2.jpg" alt="" /></a>
-                    </div>
-                    <!-- end client item -->
-                    <div class="swiper-slide" style="margin: 35px;">
-                        <a href="#"><img src="images/p3.jpeg" alt="" /></a>
-                    </div>
-                    <!-- end client item -->
-                    <!-- start client item -->
-                    <div class="swiper-slide" style="margin: 40px;">
-                        <a href="#"><img src="images/p4.jpg" alt="" /></a>
-                    </div>
-                    <!-- end client item -->
-                    <!-- start client item -->
-                    <div class="swiper-slide" style="margin: 35px;">
-                        <a href="#"><img src="images/p5.png" alt="" /></a>
-                    </div>
-                    <!-- end client item -->
-                    
-                    <!-- start client item -->
-                    <div class="swiper-slide" style="margin: 20px;">
-                        <a href="#"><img src="images/p6.png" alt="" /></a>
-                    </div>
-                    <!-- end client item -->
-                    <!-- start client item -->
-                    <div class="swiper-slide" style="margin: 20px;">
-                        <a href="#"><img src="images/p7.png" alt="" /></a>
-                    </div>
-                    <!-- end client item -->
-                  
-                    <!-- start client item -->
-                    <div class="swiper-slide" style="margin: 20px;">
-                        <a href="#"><img src="images/p8.png" alt="" /></a>
-                    </div>
-                    <!-- end client item -->
-                    <!-- start client item -->
-                    <div class="swiper-slide" style="margin: 20px;">
-                        <a href="#"><img src="images/p9.png" alt="" /></a>
-                    </div>
-                    <!-- end client item -->
-                    <!-- start client item -->
-                    <div class="swiper-slide" style="margin: 20px;">
-                        <a href="#"><img src="images/p10.png" alt="" /></a>
-                    </div>
-                    <!-- end client item -->
-                    <!-- start client item -->
-                    <div class="swiper-slide" style="margin: 20px;">
-                        <a href="#"><img src="images/p11.png" alt="" /></a>
-                    </div>
-                    <!-- end client item -->
-                    <!-- start client item -->
-                    <div class="swiper-slide" style="margin: 20px;">
-                        <a href="#"><img src="images/p12.png" alt="" /></a>
-                    </div>
-                    <!-- end client item -->
-                    
-                    <!-- start client item -->
-                    <div class="swiper-slide" style="margin: 20px;">
-                        <a href="#"><img src="images/p13.png" alt="" /></a>
-                    </div>
-                    <!-- end client item -->
-                    <!-- start client item -->
-                    <div class="swiper-slide" style="margin: 20px;">
-                        <a href="#"><img src="images/p14" alt="" /></a>
-                    </div>
-                    <!-- end client item -->
-                    <!-- start client item -->
-                    <div class="swiper-slide" style="margin: 20px;">
-                        <a href="#"><img src="images/p15.png" alt="" /></a>
-                    </div>
-                    <!-- end client item -->
-                    <!-- start client item -->
-                  
-                    <!-- end client item -->
-                    <!-- start client item -->
-                    <div class="swiper-slide" style="margin: 20px;">
-                        <a href="#"><img src="images/p17.png" alt="" /></a>
-                    </div>
-                    <!-- end client item -->
-                    <!-- start client item -->
-                   
-                    <!-- end client item -->
-                    <!-- start client item -->
-                    <div class="swiper-slide" style="margin: 20px;">
-                        <a href="#"><img src="images/p19.png" alt="" /></a>
-                    </div>
-                    <!-- end client item -->
+        <section class="pt-0">
+            <div class="container">
+                <div class="row justify-content-center">
 
-                     <!-- start client item -->
-                     <div class="swiper-slide" style="margin: 20px;">
-                        <a href="#"><img src="images/ericsson_logo.jpg" alt="" /></a>
-                    </div>
-                    <!-- end client item -->
+                </div>
+                <div class="row position-relative clients-style-08 mt-25px"
+                    data-anime='{ "translateX": [0, 0], "opacity": [0,1], "duration": 800, "delay":100, "staggervalue": 150, "easing": "easeOutQuad" }'>
+                    <div class="col swiper text-center feather-shadow"
+                        data-slider-options='{ "slidesPerView": 2, "spaceBetween":0, "speed": 3000, "loop": true, "pagination": { "el": ".slider-four-slide-pagination-2", "clickable": false }, "allowTouchMove": false, "autoplay": { "delay":0, "disableOnInteraction": false, "pauseOnMouseEnter": false}, "navigation": { "nextEl": ".slider-four-slide-next-2", "prevEl": ".slider-four-slide-prev-2" }, "keyboard": { "enabled": true, "onlyInViewport": true }, "breakpoints": { "1200": { "slidesPerView": 5 }, "768": { "slidesPerView": 3 }, "576": { "slidesPerView": 2 } }, "effect": "slide" }'>
+                        <div class="swiper-wrapper marquee-slide">
+                            <!-- start client item -->
+                            <div class="swiper-slide" style="margin: 35px;">
+                                <a href="#"><img src="img/clint svg/nsn.jpg" alt="" /></a>
+                            </div>
+                            <!-- end client item -->
+                            <!-- start client item -->
+                            <!-- start client item -->
+                            <div class="swiper-slide" style="margin: 35px;">
+                                <a href="#"><img src="img/clint svg/jio.png" alt="" /></a>
+                            </div>
+                            <!-- end client item -->
+                            <div class="swiper-slide" style="margin: 35px;">
+                                <a href="#"><img src="img/clint svg/reliance.png" alt="" /></a>
+                            </div>
+                            <!-- end client item -->
+                            <!-- start client item -->
+                            <div class="swiper-slide" style="margin: 40px;">
+                                <a href="#"><img src="img/clint svg/airtel.png" alt="" /></a>
+                            </div>
+                            <!-- end client item -->
+                            <!-- start client item -->
+                            <div class="swiper-slide" style="margin: 35px;">
+                                <a href="#"><img src="img/clint svg/huawei.svg" alt="" /></a>
+                            </div>
+                            <!-- end client item -->
 
+                            <!-- start client item -->
+                            <div class="swiper-slide" style="margin: 20px;">
+                                <a href="#"><img src="img/clint svg/nokia-3.svg" alt="" /></a>
+                            </div>
+                            <!-- end client item -->
+                            <!-- start client item -->
+                            <div class="swiper-slide" style="margin: 20px;">
+                                <a href="#"><img src="img/clint svg/indus.png" alt="" /></a>
+                            </div>
+                            <!-- end client item -->
 
-                     <!-- start client item -->
-                     <div class="swiper-slide" style="margin: 20px;">
-                        <a href="#"><img src="images/dmrc.jpg" alt="" /></a>
-                    </div>
-                    <!-- end client item -->
+                            <!-- start client item -->
+                            <div class="swiper-slide" style="margin: 20px;">
+                                <a href="#"><img src="img/clint svg/bsnl.png" alt="" /></a>
+                            </div>
+                            <!-- end client item -->
+                            <!-- start client item -->
+                            <div class="swiper-slide" style="margin: 20px;">
+                                <a href="#"><img src="img/clint svg/idea.svg" alt="" /></a>
+                            </div>
+                            <!-- end client item -->
+                            <!-- start client item -->
+                            <div class="swiper-slide" style="margin: 20px;">
+                                <a href="#"><img src="img/clint svg/ceragon.png" alt="" /></a>
+                            </div>
+                            <!-- end client item -->
+                            <!-- start client item -->
+                            <div class="swiper-slide" style="margin: 20px;">
+                                <a href="#"><img src="img/clint svg/bharat electronic.png" alt="" /></a>
+                            </div>
+                            <!-- end client item -->
+                            <!-- start client item -->
+                            <div class="swiper-slide" style="margin: 20px;">
+                                <a href="#"><img src="img/clint svg/ZTE.png" alt="" /></a>
+                            </div>
+                            <!-- end client item -->
+
+                            <!-- start client item -->
+                            <div class="swiper-slide" style="margin: 20px;">
+                                <a href="#"><img src="img/clint svg/vi.avif" alt="" /></a>
+                            </div>
+                            <!-- end client item -->
+                            <!-- start client item -->
+                            <div class="swiper-slide" style="margin: 20px;">
+                                <a href="#"><img src="img/clint svg/Sterlite.png" alt="" /></a>
+                            </div>
+                            <!-- end client item -->
+                            <!-- start client item -->
+                            <div class="swiper-slide" style="margin: 20px;">
+                                <a href="#"><img src="img/clint svg/tata teli bussiness services.png" alt="" /></a>
+                            </div>
+                            <!-- end client item -->
+                            <!-- start client item -->
+
+                            <!-- end client item -->
+                            <!-- start client item -->
+                            <div class="swiper-slide" style="margin: 20px;">
+                                <a href="#"><img src="img/clint svg/tower.jpg" alt="" /></a>
+                            </div>
+                            <!-- end client item -->
+                            <!-- start client item -->
+
+                            <!-- end client item -->
+                            <!-- start client item -->
+                            <div class="swiper-slide" style="margin: 20px;">
+                                <a href="#"><img src="img/clint svg/wipro.png" alt="" /></a>
+                            </div>
+                            <!-- end client item -->
+
+                            <!-- start client item -->
+                            <div class="swiper-slide" style="margin: 20px;">
+                                <a href="#"><img src="img/clint svg/Ericsson-Symbol.png" alt="" /></a>
+                            </div>
+                            <!-- end client item -->
 
 
-                     <!-- start client item -->
-                     <div class="swiper-slide" style="margin: 20px;">
-                        <a href="#"><img src="images/rail tel.jpeg" alt="" /></a>
+                            <!-- start client item -->
+                            <div class="swiper-slide" style="margin: 20px;">
+                                <a href="#"><img src="img/clint svg/metro.png" alt="" /></a>
+                            </div>
+                            <!-- end client item -->
+
+
+                            <!-- start client item -->
+                            <div class="swiper-slide" style="margin: 20px;">
+                                <a href="#"><img src="img/clint svg/RailTel.svg" alt="" /></a>
+                            </div>
+                            <!-- end client item -->
+                        </div>
                     </div>
-                    <!-- end client item -->
-                </div> 
-            </div>  
-        </div>
-    </div>
-</section>
-
- 
-
-
+                </div>
+            </div>
+        </section>
 
 
 
 
 
 
-      
+
+
+
+
+
         <!-- start footer -->
         <footer class="p-0 fs-16 border-top border-color-extra-medium-gray">
             <div class="container">
@@ -1221,20 +1227,23 @@
                         <a href="index.html" class="footer-logo mb-15px d-inline-block"><img
                                 src="images/demo-corporate-logo-black@2x.png    "
                                 data-at2x="images/demo-corporate-logo-black@2x.png" alt=""></a>
-                                
-                        <p class="lh-30 w-90 xl-w-100 mx-lg-auto mx-xl-0">Bodhitree Technologies Pvt. Ltd. is a leading provider of Network Lifecycle Management Solutions to Operators & Service Providers.
+
+                        <p class="lh-30 w-90 xl-w-100 mx-lg-auto mx-xl-0">Bodhitree Technologies Pvt. Ltd. is a leading
+                            provider of Network Lifecycle Management Solutions to Operators & Service Providers.
 
                         </p>
                         <div class="elements-social social-icon-style-02 mt-20px xs-mt-15px">
                             <ul class="medium-icon dark">
-                                <li class="my-0"><a class="facebook" href="https://www.facebook.com/people/Bodhitree-Technologies-Pvt-Ltd/100057190400397/" target="_blank"><i
-                                            class="fa-brands fa-facebook-f"></i></a></li>
-                                <li class="my-0"><a class="dribbble" href="https://www.linkedin.com/uas/login?session_redirect=https%3A%2F%2Fwww.linkedin.com%2Fcompany%2F13368154%2Fadmin%2F" target="_blank"><i
-                                            class="fa-brands fa-linkedin"></i></a></li>
-                                <li class="my-0"><a class="twitter" href="https://twitter.com/Bodhi09881061" target="_blank"><i
-                                            class="fa-brands fa-twitter"></i></a></li>
-                                <li class="my-0"><a class="instagram" href="https://www.instagram.com/bodhi.tree2020/" target="_blank"><i
-                                            class="fa-brands fa-instagram"></i></a></li>
+                                <li class="my-0"><a class="facebook"
+                                        href="https://www.facebook.com/people/Bodhitree-Technologies-Pvt-Ltd/100057190400397/"
+                                        target="_blank"><i class="fa-brands fa-facebook-f"></i></a></li>
+                                <li class="my-0"><a class="dribbble"
+                                        href="https://www.linkedin.com/uas/login?session_redirect=https%3A%2F%2Fwww.linkedin.com%2Fcompany%2F13368154%2Fadmin%2F"
+                                        target="_blank"><i class="fa-brands fa-linkedin"></i></a></li>
+                                <li class="my-0"><a class="twitter" href="https://twitter.com/Bodhi09881061"
+                                        target="_blank"><i class="fa-brands fa-twitter"></i></a></li>
+                                <li class="my-0"><a class="instagram" href="https://www.instagram.com/bodhi.tree2020/"
+                                        target="_blank"><i class="fa-brands fa-instagram"></i></a></li>
                             </ul>
                         </div>
                     </div>
@@ -1245,13 +1254,14 @@
                         <ul>
                             <li><a href="index.html">Home</a></li>
                             <li><a href="demo-corporate-about.html">About</a>
-                               
+
                             </li>
                             <li><a href="demo-corporate-services.html">Services</a>
                                 <div
-                                class="bg-dark-gray fw-600 text-white lh-22 text-uppercase border-radius-30px ps-10px pe-10px fs-10 ms-10px d-inline-block align-middle">
-                                Hot</div></li>
-                           
+                                    class="bg-dark-gray fw-600 text-white lh-22 text-uppercase border-radius-30px ps-10px pe-10px fs-10 ms-10px d-inline-block align-middle">
+                                    Hot</div>
+                            </li>
+
                         </ul>
                     </div>
                     <!-- end footer column -->
@@ -1267,11 +1277,11 @@
                     </div>
                     <!-- end footer column -->
                     <!-- start footer column -->
-                    
+
                     <!-- end footer column -->
                     <!-- start footer column -->
                     <div class="col-xl-3 col-lg-3 col-sm-6 md-mb-50px sm-mb-30px xs-mb-0 order-sm-2 order-lg-5">
-                       <img src="images/qrcode.png" alt="">
+                        <img src="images/qrcode.png" alt="">
                     </div>
                     <!-- end footer column -->
                 </div>
@@ -1284,19 +1294,20 @@
                     <!-- start copyright -->
                     <div
                         class="col-lg-5 pt-35px pb-35px md-pt-0 order-2 order-lg-1 text-center text-lg-start last-paragraph-no-margin">
-                        <p>&copy; 2024 All Rights Reserved. Developed By <a href="http://maftechnology.com/" target="_blank"
+                        <p>&copy; 2024 All Rights Reserved. Developed By <a href="http://maftechnology.com/"
+                                target="_blank"
                                 class="text-dark-gray fw-600 text-decoration-line-bottom">Maftechnology</a></p>
                     </div>
                     <!-- end copyright -->
                     <!-- start footer menu -->
-                    
+
                     <!-- end footer menu -->
                 </div>
             </div>
         </footer>
         <!-- end footer -->
         <!-- start scroll progress -->
-       
+
         <!-- end scroll progress -->
     </div>
     <!-- javascript libraries -->
