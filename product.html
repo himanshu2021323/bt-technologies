@@ -2,123 +2,39 @@
 <html class="no-js" lang="en">
 
 <head>
-    <title>Bodhitree Technologies</title>
+    <title>BT | Products</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="author" content="ThemeZaa">
     <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <meta name="description"
+        content="Elevate your online presence with Crafto - a modern, versatile, multipurpose Bootstrap 5 responsive HTML5, SCSS template using highly creative 48+ ready demos.">
+    <!-- favicon icon -->
     <link rel="shortcut icon" href="images/favicon.png">
     <link rel="apple-touch-icon" href="images/favicon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+    <!-- google fonts preconnect -->
     <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- slider revolution CSS files -->
+    <link rel="stylesheet" type="text/css" href="revolution/css/settings.css">
+    <link rel="stylesheet" type="text/css" href="revolution/css/layers.css">
+    <link rel="stylesheet" type="text/css" href="revolution/css/navigation.css">
+    <!-- style sheets and font icons  -->
     <link rel="stylesheet" href="css/vendors.min.css" />
     <link rel="stylesheet" href="css/icon.min.css" />
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/responsive.css" />
     <link rel="stylesheet" href="demos/corporate/corporate.css" />
+
     <style>
-        .sub-products {
-            display: none;
-            transition: max-height 0.3s;
-            padding-bottom: 10px;
-        }
-
         body {
-                font-family: Arial, sans-serif;
-                margin: 0;
-                padding: 40px;
-                background: #f9f9f9;
-                text-align: center;
-        }
-
-        .sub-products.open {
-            display: block;
-        }
-
-        .product-btn {
-            border: none;
-            background: none;
-            color: inherit;
-            width: 100%;
-            text-align: left;
-            padding: 0;
-        }
-
-        .product-card {
-            cursor: pointer;
-            position: relative;
-        }
-
-        .product-card.active {
-            box-shadow: 0 0 0 2px #0074d9 inset;
-        }
-
-        /* ...existing code... */
-
-        /* Custom Footer Styles */
-        footer.bg-darkText {
-            background-color: #242E45;
-            color: #fff;
-            padding-top: 3rem;
-            padding-bottom: 1.5rem;
-        }
-
-        footer .font-semibold {
-            color: #fff;
-            font-weight: 600;
-        }
-
-        footer ul li a {
-            color: #d1d5db;
-            text-decoration: none;
-            transition: color 0.2s;
-        }
-
-        footer ul li a:hover,
-        footer a.hover\:text-accent:hover {
-            color: #0074d9;
-        }
-
-        footer .text-gray-300 {
-            color: #d1d5db;
-        }
-
-        footer .text-gray-400 {
-            color: #9ca3af;
-        }
-
-        footer .text-accent {
-            color: #0074d9;
-        }
-
-        footer .border-t {
-            border-top: 1px solid #374151;
-        }
-
-        footer .flex a {
-            color: #0074d9;
-            transition: color 0.2s;
-        }
-
-        footer .flex a:hover {
-            color: #fff;
-        }
-
-        footer img {
-            max-width: 120px;
-            height: auto;
-        }
-
-        @media (max-width: 768px) {
-            footer .max-w-6xl {
-                grid-template-columns: 1fr !important;
-                gap: 2rem !important;
-            }
-
-            footer .px-4 {
-                padding-left: 1rem !important;
-                padding-right: 1rem !important;
-            }
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 40px;
+            background: #f9f9f9;
+            text-align: center;
         }
     </style>
 </head>
@@ -161,7 +77,7 @@
                                 <li class="nav-item"><a href="demo-corporate-about.html" class="nav-link">About</a></li>
                                 <li class="nav-item"><a href="demo-corporate-services.html"
                                         class="nav-link">Services</a></li>
-                                <li class="nav-item"><a href="new_prod.html" class="nav-link">Products</a></li>
+                                <li class="nav-item"><a href="product.html" class="nav-link">Products</a></li>
                                 <li class="nav-item"><a href="gallery.html" class="nav-link">Gallery</a></li>
                                 <!-- <li class="nav-item"><a href="career.html" class="nav-link">Career</a></li> -->
                                 <li class="nav-item"><a href="demo-corporate-contact.html" class="nav-link">Contact</a>
@@ -176,7 +92,7 @@
         </header>
         <!-- end header -->
         <!-- start page title -->
-        <section class="top-space-margin page-title-big-typography border-radius-6px lg-border-radius-0px p-0"
+        <section class="top-space mt-10 page-title-big-typography border-radius-6px lg-border-radius-0px p-0"
             data-parallax-background-ratio="0.5"
             style="background-image: url(''); background-size: cover; background-position: center;">
 
@@ -191,9 +107,10 @@
                         data-anime='{ "el": "childs", "translateY": [50, 0], "opacity": [0,1], "duration": 600, "delay": 0, "staggervalue": 300, "easing": "easeOutQuad" }'>
 
                         <h1 class="m-auto text-white text-shadow-double-large fw-600 ls-minus-2px">
-                            Services
+                            Products
                         </h1>
                         <p class="text-white fs-5 fw-300 mt-3">
+                            Innovative products that simplify network operations, boost efficiency, and empower businesses in the digital era.
                         </p>
                     </div>
 
@@ -209,13 +126,10 @@
                 </div>
             </div>
         </section>
-        <!-- end page title -->
-
-
 
         <!-- start section -->
         <section
-            class="bg-gradient-quartz-white position-relative z-index-0 border-radius-6px lg-border-radius-0px overflow-hidden">
+            class="bg-gradient-quartz-white position-relative z-index-0 border-radius-6px lg-border-radius-0px overflow-hidden" id="down-section">
             <div class="container">
                 <div class="row justify-content-center mb-3">
                     <div class="col-xl-5 col-lg-6 text-center">
@@ -227,7 +141,7 @@
                     <!-- START INTERACTIVE PRODUCT CARD 1 -->
                     <!-- Example Connectors Product Card -->
                     <!-- Connectors product card with toggle -->
-                    <div class="col interactive-banner-style-02 hover-box dark-hover md-mb-30px product-card"
+                    <div class="col interactive-banner-style-02 hover-box light-hover md-mb-30px product-card"
                         id="connectors-card">
                         <div class="card-content">
                             <button onclick="toggleSubProducts('connectors-subproducts')" type="button"
@@ -300,7 +214,7 @@
 
                     <!-- END INTERACTIVE PRODUCT CARD 1 -->
                     <!-- Second interactive product card: CABLES -->
-                    <div class="col interactive-banner-style-02 hover-box dark-hover md-mb-30px product-card"
+                    <div class="col interactive-banner-style-02 hover-box light-hover md-mb-30px product-card"
                         id="cables-card">
                         <div class="card-content">
                             <button onclick="toggleSubProducts('cables-subproducts')" type="button"
@@ -443,7 +357,7 @@
                     </div>
 
                     <!-- Third interactive product card: CLAMPS -->
-                    <div class="col interactive-banner-style-02 hover-box dark-hover md-mb-30px product-card"
+                    <div class="col interactive-banner-style-02 hover-box light-hover md-mb-30px product-card"
                         id="clamps-card">
                         <div class="card-content">
                             <button onclick="toggleSubProducts('clamps-subproducts')" type="button"
@@ -521,7 +435,7 @@
                     </div>
 
                     <!-- Example: Fourth interactive product card: Installation Kit -->
-                    <div class="col interactive-banner-style-02 hover-box dark-hover md-mb-30px product-card"
+                    <div class="col interactive-banner-style-02 hover-box light-hover md-mb-30px product-card"
                         id="installation-card">
                         <div class="card-content">
                             <button onclick="toggleSubProducts('installation-subproducts')" type="button"
@@ -600,7 +514,7 @@
                     </div>
 
                     <!-- Example: Fifth interactive product card: Adopter Plates -->
-                    <div class="col interactive-banner-style-02 hover-box dark-hover md-mb-30px product-card"
+                    <div class="col interactive-banner-style-02 hover-box light-hover md-mb-30px product-card"
                         id="adopter-card">
                         <div class="card-content">
                             <button onclick="toggleSubProducts('adopter-subproducts')" type="button"
@@ -650,81 +564,164 @@
         </section>
         <!-- end section -->
 
-        <!-- ...footer here... (unchanged) ... -->
-
-        <!-- FOOTER -->
         <!-- start footer -->
-        <footer class="p-0 fs-16 border-top border-color-extra-medium-gray">
+        <style>
+            .footer {
+                background: #111827;
+                color: #d1d5db;
+                padding: 60px 0 30px;
+                font-size: 15px;
+            }
+
+            .footer-logo img {
+                max-height: 40px;
+            }
+
+            .footer-text {
+                max-width: 320px;
+                line-height: 1.6;
+                font-size: 14px;
+            }
+
+            .footer-title {
+                font-size: 16px;
+                font-weight: 600;
+                color: #ffffff;
+                margin-bottom: 15px;
+            }
+
+            .footer-links {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+            }
+
+            .footer-links li {
+                margin-bottom: 8px;
+            }
+
+            .footer-links a {
+                color: #d1d5db;
+                text-decoration: none;
+                transition: color 0.3s ease;
+            }
+
+            .footer-links a:hover {
+                color: #6366f1;
+                /* accent color */
+            }
+
+            .social-links a {
+                display: inline-block;
+                margin-right: 12px;
+                font-size: 16px;
+                color: #d1d5db;
+                transition: color 0.3s ease;
+            }
+
+            .social-links a:hover {
+                color: #6366f1;
+                /* accent hover */
+            }
+
+            .footer-qr {
+                max-width: 120px;
+            }
+
+            .footer-bottom {
+                text-align: center;
+                border-top: 1px solid rgba(255, 255, 255, 0.1);
+                margin-top: 40px;
+                padding-top: 20px;
+                font-size: 14px;
+            }
+
+            .footer-bottom a {
+                color: #6366f1;
+                text-decoration: none;
+            }
+
+            .footer-bottom a:hover {
+                text-decoration: underline;
+            }
+        </style>
+        <!-- Modern Footer -->
+        <footer class="bg-dark text-white pt-5 pb-4">
             <div class="container">
-                <div class="row justify-content-center pt-6 sm-pt-40px">
-                    <div class="col-12 col-xl-3 col-lg-12 col-sm-6 mb-4 text-xl-start text-lg-center">
-                        <a href="index.html" class="footer-logo d-inline-block mb-2">
-                            <img src="images/demo-corporate-logo-black@2x.png" alt="Bodhitree Technologies">
+                <div class="row">
+
+                    <!-- Logo / Company -->
+                    <div class="col-md-3 mb-3">
+                        <a href="index.html" class="footer-logo d-inline-block mb-3">
+                            <img src="images/demo-corporate-logo-black@2x.png" alt="Bodhitree Logo" />
                         </a>
-                        <p>Bodhitree Technologies Pvt. Ltd. is a leading provider of Network Lifecycle Management
+                        <p class="small text">
+                            Bodhitree Technologies Pvt. Ltd. is a leading provider of Network Lifecycle Management
                             Solutions to Operators & Service Providers.
                         </p>
-                        <div class="elements-social social-icon-style-02 mt-20px xs-mt-15px">
-                            <!-- Social icons as in your current markup -->
-                            <ul class="medium-icon dark">
-                                <li class="my-0"><a class="facebook"
-                                        href="https://www.facebook.com/people/Bodhitree-Technologies-Pvt-Ltd/100057190400397/"
-                                        target="_blank"><i class="fa-brands fa-facebook-f"></i></a></li>
-                                <li class="my-0"><a class="dribbble"
-                                        href="https://www.linkedin.com/uas/login?session_redirect=https%3A%2F%2Fwww.linkedin.com%2Fcompany%2F13368154%2Fadmin%2F"
-                                        target="_blank"><i class="fa-brands fa-linkedin"></i></a></li>
-                                <li class="my-0"><a class="twitter" href="https://twitter.com/Bodhi09881061"
-                                        target="_blank"><i class="fa-brands fa-twitter"></i></a></li>
-                                <li class="my-0"><a class="instagram" href="https://www.instagram.com/bodhi.tree2020/"
-                                        target="_blank"><i class="fa-brands fa-instagram"></i></a></li>
-                            </ul>
-                        </div>
                     </div>
-                    <div class="col-6 col-xl-2 col-lg-3 col-sm-4 mb-4">
-                        <span class="footer-header"><b>Company</b></span>
-                        <ul>
-                            <li><a href="index.html">Home</a></li>
-                            <li><a href="demo-corporate-about.html">About</a></li>
-                            <li><a href="demo-corporate-services.html">Services</a></li>
+
+                    <!-- Quick Links -->
+                    <div class="col-md-3 mb-3">
+                        <h5 class="fw-semibold mb-3">Company</h5>
+                        <ul class="list-unstyled">
+                            <li><a href="index.html" class="text-white text-decoration-none">Home</a></li>
+                            <li><a href="demo-corporate-about.html" class="text-white text-decoration-none">About</a>
+                            </li>
+                            <li><a href="demo-corporate-services.html"
+                                    class="text-white text-decoration-none">Services</a></li>
                         </ul>
                     </div>
-                    <div class="col-6 col-xl-2 col-lg-3 col-sm-4 mb-4">
-                        <span class="footer-header"><b>Discover</b></span>
-                        <ul>
-                            <li><a href="gallery.html">Gallery</a></li>
-                            <li><a href="product.html">Product</a></li>
-                            <li><a href="career.html">Career</a></li>
-                            <li><a href="demo-corporate-contact.html">Contact</a></li>
+
+                    <div class="col-md-3 mb-3">
+                        <h5 class="fw-semibold mb-3">Resources</h5>
+                        <ul class="list-unstyled">
+                            <li><a href="product.html" class="text-white text-decoration-none">Products</a></li>
+                            <li><a href="gallery.html" class="text-white text-decoration-none">Gallery</a></li>
+                            <li><a href="demo-corporate-contact.html"
+                                    class="text-white text-decoration-none">Contact</a></li>
                         </ul>
                     </div>
-                    <div class="col-xl-3 col-lg-3 col-sm-6 mb-4">
-                        <span class="footer-header"><b>Find Us</b></span>
-                        <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3505.0438264774893!2d77.27003587528537!3d28.538402375716405!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce308db1f4ea7%3A0x5badafa520c84769!2sBodhitree%20Technologies%20Pvt%20Ltd!5e0!3m2!1sen!2sin!4v1756204331342!5m2!1sen!2sin"
-                            width="100%" height="180" style="border:0;" allowfullscreen="" loading="lazy"
-                            referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+                    <!-- Social Media -->
+                    <div class="col-md-3 mb-3">
+                        <h5 class="fw-semibold mb-3">Follow Us</h5>
+                        <a href="https://www.facebook.com/people/Bodhitree-Technologies-Pvt-Ltd/100057190400397/"
+                            class="text-white me-3"><i class="bi bi-facebook"></i></a>
+                        <a href="https://twitter.com/Bodhi09881061" class="text-white me-3"><i
+                                class="bi bi-twitter"></i></a>
+                        <a href="https://www.instagram.com/bodhi.tree2020/" class="text-white me-3"><i
+                                class="bi bi-instagram"></i></a>
+                        <a href="https://www.linkedin.com/company/13368154/" class="text-white"><i
+                                class="bi bi-linkedin"></i></a>
                     </div>
+
                 </div>
-                <div class="row justify-content-center align-items-center pt-2">
-                    <div class="col-12">
-                        <div class="divider-style-03 divider-style-03-01 border-color-transparent-white-light"></div>
-                    </div>
-                    <div
-                        class="col-lg-5 pt-35px pb-35px md-pt-0 order-2 order-lg-1 text-center text-lg-start last-paragraph-no-margin">
-                        <p>&copy; 2024 All Rights Reserved.</p>
-                    </div>
+
+
+                <!-- Copyright -->
+                <div class="text-center pt-3 border-top border-secondary mt-4">
+                    <p class="small mb-0">
+                        &copy; 2024 Bodhitree Technologies. All Rights Reserved.
+                    </p>
                 </div>
             </div>
         </footer>
-
-        <script src="js/vendors.min.js"></script>
-        <script src="js/main.js"></script>
-        <script src="js/jquery.appear.js"></script>
-        <script src="js/jquery.countTo.js"></script>
-        <script src="js/owl.carousel.min.js"></script>
-        <script src="js/scrollreveal.min.js"></script>
-        <script src="js/jquery.magnific-popup.min.js"></script>
-        <script src="js/custom.js"></script>
+        <!-- end footer -->
+        <!-- end footer -->
+        <!-- start scroll progress -->
+        <div class="scroll-progress d-none d-xxl-block">
+            <a href="#" class="scroll-top" aria-label="scroll">
+                <span class="scroll-text">Scroll</span><span class="scroll-line"><span
+                        class="scroll-point"></span></span>
+            </a>
+        </div>
+        <!-- end scroll progress -->
+    </div>
+    <!-- javascript libraries -->
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/vendors.min.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
 </body>
 
 </html>

@@ -2,7 +2,7 @@
 <html class="no-js" lang="en">
 
 <head>
-    <title>Bodhitree Technologies</title>
+    <title>BT | Services</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="author" content="ThemeZaa">
@@ -96,22 +96,24 @@
         }
 
         .filters {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin: 18px 0 8px;
-            justify-content: center
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 15px;
+            width: 100%;
         }
 
         .chip {
-            border: 1px solid #e2e8f0;
+            display: block;
+            width: 100%;
+            padding: 12px 16px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
             background: #fff;
-            color: #0f172a;
-            padding: 8px 12px;
-            border-radius: 999px;
-            font-size: 14px;
             cursor: pointer;
-            transition: .2s ease
+            text-align: center;
+            font-size: 16px;
+            font-weight: 500;
+            transition: all 0.3s ease;
         }
 
         .chip:hover {
@@ -120,9 +122,9 @@
         }
 
         .chip.active {
-            background: var(--brand);
-            border-color: var(--brand);
-            color: #fff
+            background: #6366f1;
+            color: #fff;
+            border-color: #6366f1;
         }
 
         .grid {
@@ -194,13 +196,13 @@
 
         .title {
             font-weight: 700;
-            font-size: 18px;
+            font-size: 19px;
             line-height: 1.3
         }
 
         .desc {
             color: var(--muted);
-            font-size: 14px;
+            font-size: 15px;
             max-height: 0;
             opacity: 0;
             transition: max-height .35s ease, opacity .35s ease
@@ -296,7 +298,7 @@
                                 <li class="nav-item"><a href="demo-corporate-about.html" class="nav-link">About</a></li>
                                 <li class="nav-item"><a href="demo-corporate-services.html"
                                         class="nav-link">Services</a></li>
-                                <li class="nav-item"><a href="new_prod.html" class="nav-link">Products</a></li>
+                                <li class="nav-item"><a href="product.html" class="nav-link">Products</a></li>
                                 <li class="nav-item"><a href="gallery.html" class="nav-link">Gallery</a></li>
                                 <!-- <li class="nav-item"><a href="career.html" class="nav-link">Career</a></li> -->
                                 <li class="nav-item"><a href="demo-corporate-contact.html" class="nav-link">Contact</a>
@@ -313,8 +315,8 @@
     <!-- end header -->
     <!-- start page title -->
     <section class="top-space-margin page-title-big-typography border-radius-6px lg-border-radius-0px p-0"
-        data-parallax-background-ratio="0.5"
-        style="background-image: url(''); background-size: cover; background-position: center;">
+            data-parallax-background-ratio="0.5"
+            style="background-image: url('img/banner042.jpg'); background-size: cover; background-position: center;">
 
         <!-- Dark overlay for readability -->
         <div class="opacity-extra-medium bg-blue-whale"></div>
@@ -348,9 +350,10 @@
         </div>
     </section>
     <!-- end page title -->
+
     <!-- start section -->
-    <div class="container" id="down-section">
-        <section>
+    <section id="down-section" style="padding: 50px;">
+        <div class="filters-wrapper">
             <div class="filters" id="filters">
                 <button class="chip active" data-filter="all">All</button>
                 <button class="chip" data-filter="optimization">Network Optimization</button>
@@ -359,337 +362,368 @@
                 <button class="chip" data-filter="logistics">Logistics & Support</button>
                 <button class="chip" data-filter="deployment">Deployment</button>
             </div>
-        </section>
+        </div>
+    </section>
 
+    <section class="grid" id="grid">
+        <!-- 1 -->
+        <article class="card" data-category="optimization">
+            <div class="media">
+                <span class="cat">Optimization</span>
+                <img loading="lazy" alt="Network analytics dashboard" src="img/services/network optimaze.jpeg" />
+            </div>
+            <div class="content">
+                <div class="title">Network Assets Management & Optimization</div>
+                <p class="desc">Data-driven asset visibility, lifecycle tracking, and performance optimization
+                    to cut OPEX and
+                    improve uptime.</p>
+            </div>
+        </article>
 
-        <section class="grid" id="grid">
-            <!-- 1 -->
-            <article class="card" data-category="optimization">
-                <div class="media">
-                    <span class="cat">Optimization</span>
-                    <img loading="lazy" alt="Network analytics dashboard"
-                        src="img/services/network optimaze.jpeg" />
-                </div>
-                <div class="content">
-                    <div class="title">Network Assets Management & Optimization</div>
-                    <p class="desc">Data-driven asset visibility, lifecycle tracking, and performance optimization
-                        to cut OPEX and
-                        improve uptime.</p>
-                </div>
-                <div class="actions"><a class="cta" href="">Explore services →</a></div>
-            </article>
+        <!-- 2 -->
+        <article class="card" data-category="repair">
+            <div class="media">
+                <span class="cat">Repair</span>
+                <img loading="lazy" alt="Engineer repairing PCB" src="images/RepairRefurbishment.png" />
+            </div>
+            <div class="content">
+                <div class="title">Repair & Refurbishment of Telecom Equipment</div>
+                <p class="desc">Board-level diagnostics, component replacement, and refurbishment with QA to
+                    extend equipment
+                    lifecycle.</p>
+            </div>
+        </article>
 
-            <!-- 2 -->
-            <article class="card" data-category="repair">
-                <div class="media">
-                    <span class="cat">Repair</span>
-                    <img loading="lazy" alt="Engineer repairing PCB"
-                        src="images/RepairRefurbishment.png" />
-                </div>
-                <div class="content">
-                    <div class="title">Repair & Refurbishment of Telecom Equipment</div>
-                    <p class="desc">Board-level diagnostics, component replacement, and refurbishment with QA to
-                        extend equipment
-                        lifecycle.</p>
-                </div>
-                <div class="actions"><a class="cta" href="">Explore services →</a></div>
-            </article>
+        <!-- 3 -->
+        <article class="card" data-category="repair">
+            <div class="media">
+                <span class="cat">Repair</span>
+                <img loading="lazy" alt="Microwave/GSM antennas on tower" src="img/services/gsm antina.jpeg" />
+            </div>
+            <div class="content">
+                <div class="title">Repair of Microwave and GSM Antennas</div>
+                <p class="desc">Precision repair & calibration for microwave/GSM antenna systems to restore link
+                    stability and
+                    gain.</p>
+            </div>
+        </article>
 
-            <!-- 3 -->
-            <article class="card" data-category="repair">
-                <div class="media">
-                    <span class="cat">Repair</span>
-                    <img loading="lazy" alt="Microwave/GSM antennas on tower"
-                        src="img/services/gsm antina.jpeg" />
-                </div>
-                <div class="content">
-                    <div class="title">Repair of Microwave and GSM Antennas</div>
-                    <p class="desc">Precision repair & calibration for microwave/GSM antenna systems to restore link
-                        stability and
-                        gain.</p>
-                </div>
-                <div class="actions"><a class="cta" href="">Explore services →</a></div>
-            </article>
+        <!-- 4 -->
+        <article class="card" data-category="field">
+            <div class="media">
+                <span class="cat">O&M</span>
+                <img loading="lazy" alt="Operations & maintenance team" src="img/services/opration mainten.jpeg" />
+            </div>
+            <div class="content">
+                <div class="title">Operations & Maintenance Solutions</div>
+                <p class="desc">End-to-end O&M with preventive maintenance, SLAs, and 24×7 support for maximum
+                    network
+                    availability.</p>
+            </div>
+        </article>
 
-            <!-- 4 -->
-            <article class="card" data-category="field">
-                <div class="media">
-                    <span class="cat">O&M</span>
-                    <img loading="lazy" alt="Operations & maintenance team"
-                        src="img/services/opration mainten.jpeg" />
-                </div>
-                <div class="content">
-                    <div class="title">Operations & Maintenance Solutions</div>
-                    <p class="desc">End-to-end O&M with preventive maintenance, SLAs, and 24×7 support for maximum
-                        network
-                        availability.</p>
-                </div>
-                <div class="actions"><a class="cta" href="">Explore services →</a></div>
-            </article>
+        <!-- 5 -->
+        <article class="card" data-category="field">
+            <div class="media">
+                <span class="cat">Field</span>
+                <img loading="lazy" alt="Engineer inspecting telecom cabinet"
+                    src="img/services/field services  and dig.jpeg" />
+            </div>
+            <div class="content">
+                <div class="title">Field Services & Fault Diagnosis</div>
+                <p class="desc">Rapid on-site troubleshooting, health checks, and RCA to minimize downtime and
+                    truck rolls.
+                </p>
+            </div>
+        </article>
 
-            <!-- 5 -->
-            <article class="card" data-category="field">
-                <div class="media">
-                    <span class="cat">Field</span>
-                    <img loading="lazy" alt="Engineer inspecting telecom cabinet"
-                        src="img/services/field services  and dig.jpeg" />
-                </div>
-                <div class="content">
-                    <div class="title">Field Services & Fault Diagnosis</div>
-                    <p class="desc">Rapid on-site troubleshooting, health checks, and RCA to minimize downtime and
-                        truck rolls.
-                    </p>
-                </div>
-                <div class="actions"><a class="cta" href="">Explore services →</a></div>
-            </article>
+        <!-- 6 -->
+        <article class="card" data-category="logistics">
+            <div class="media">
+                <span class="cat">Logistics</span>
+                <img loading="lazy" alt="Warehouse with racks" src="img/services/where house.jpeg" />
+            </div>
+            <div class="content">
+                <div class="title">Warehouse Services and Reverse Logistics</div>
+                <p class="desc">Secure storage, RMA handling, reverse logistics, and real-time inventory
+                    visibility.</p>
+            </div>
+        </article>
 
-            <!-- 6 -->
-            <article class="card" data-category="logistics">
-                <div class="media">
-                    <span class="cat">Logistics</span>
-                    <img loading="lazy" alt="Warehouse with racks"
-                        src="img/services/where house.jpeg" />
-                </div>
-                <div class="content">
-                    <div class="title">Warehouse Services and Reverse Logistics</div>
-                    <p class="desc">Secure storage, RMA handling, reverse logistics, and real-time inventory
-                        visibility.</p>
-                </div>
-                <div class="actions"><a class="cta" href="">Explore services →</a></div>
-            </article>
+        <!-- 7 -->
+        <article class="card" data-category="logistics">
+            <div class="media">
+                <span class="cat">Logistics</span>
+                <img loading="lazy" alt="Organized spare parts" src="img/services/spar part" />
+            </div>
+            <div class="content">
+                <div class="title">Spare Parts Management</div>
+                <p class="desc">Optimized spares planning, fast dispatch, and SLA-based replacement to keep
+                    networks running.
+                </p>
+            </div>
+        </article>
 
-            <!-- 7 -->
-            <article class="card" data-category="logistics">
-                <div class="media">
-                    <span class="cat">Logistics</span>
-                    <img loading="lazy" alt="Organized spare parts"
-                        src="img/services/spar part" />
-                </div>
-                <div class="content">
-                    <div class="title">Spare Parts Management</div>
-                    <p class="desc">Optimized spares planning, fast dispatch, and SLA-based replacement to keep
-                        networks running.
-                    </p>
-                </div>
-                <div class="actions"><a class="cta" href="">Explore services →</a></div>
-            </article>
+        <!-- 8 -->
+        <article class="card" data-category="repair">
+            <div class="media">
+                <span class="cat">Repair</span>
+                <img loading="lazy" alt="Transformer repair" src="img/services/repair and transformer.jpeg" />
+            </div>
+            <div class="content">
+                <div class="title">Repair & Transformer Repair Services</div>
+                <p class="desc">Power equipment diagnostics, rewinding, and load testing with safety and
+                    compliance checks.
+                </p>
+            </div>
+        </article>
 
-            <!-- 8 -->
-            <article class="card" data-category="repair">
-                <div class="media">
-                    <span class="cat">Repair</span>
-                    <img loading="lazy" alt="Transformer repair"
-                        src="img/services/repair and transformer.jpeg" />
-                </div>
-                <div class="content">
-                    <div class="title">Repair & Transformer Repair Services</div>
-                    <p class="desc">Power equipment diagnostics, rewinding, and load testing with safety and
-                        compliance checks.
-                    </p>
-                </div>
-                <div class="actions"><a class="cta" href="">Explore services →</a></div>
-            </article>
+        <!-- 9 -->
+        <article class="card" data-category="field">
+            <div class="media">
+                <span class="cat">Manpower</span>
+                <img loading="lazy" alt="Team of telecom engineers" src="img/services/technical men power supply" />
+            </div>
+            <div class="content">
+                <div class="title">Technical Manpower Supply</div>
+                <p class="desc">Skilled L1–L3 engineers, riggers, and PMO resources on demand for rollout and
+                    maintenance.</p>
+            </div>
+        </article>
 
-            <!-- 9 -->
-            <article class="card" data-category="field">
-                <div class="media">
-                    <span class="cat">Manpower</span>
-                    <img loading="lazy" alt="Team of telecom engineers"
-                        src="img/services/technical men power supply" />
-                </div>
-                <div class="content">
-                    <div class="title">Technical Manpower Supply</div>
-                    <p class="desc">Skilled L1–L3 engineers, riggers, and PMO resources on demand for rollout and
-                        maintenance.</p>
-                </div>
-                <div class="actions"><a class="cta" href="">Explore services →</a></div>
-            </article>
+        <!-- 10 -->
+        <article class="card" data-category="optimization">
+            <div class="media">
+                <span class="cat">Optimization</span>
+                <img loading="lazy" alt="Signal analytics" src="img/services/fade margin.jpeg" />
+            </div>
+            <div class="content">
+                <div class="title">Fade Margin Improvement</div>
+                <p class="desc">Link budget review, alignment, and interference mitigation to boost reliability
+                    in fading
+                    conditions.</p>
+            </div>
+        </article>
 
-            <!-- 10 -->
-            <article class="card" data-category="optimization">
-                <div class="media">
-                    <span class="cat">Optimization</span>
-                    <img loading="lazy" alt="Signal analytics"
-                        src="img/services/fade margin.jpeg" />
-                </div>
-                <div class="content">
-                    <div class="title">Fade Margin Improvement</div>
-                    <p class="desc">Link budget review, alignment, and interference mitigation to boost reliability
-                        in fading
-                        conditions.</p>
-                </div>
-                <div class="actions"><a class="cta" href="">Explore services →</a></div>
-            </article>
+        <!-- 11 -->
+        <article class="card" data-category="logistics">
+            <div class="media">
+                <span class="cat">Logistics</span>
+                <img loading="lazy" alt="Cargo containers on ship" src="img/services/import export.jpeg" />
+            </div>
+            <div class="content">
+                <div class="title">Import and Export Services</div>
+                <p class="desc">Customs-ready import/export for telecom gear with documentation, insurance, and
+                    tracking.</p>
+            </div>
+        </article>
 
-            <!-- 11 -->
-            <article class="card" data-category="logistics">
-                <div class="media">
-                    <span class="cat">Logistics</span>
-                    <img loading="lazy" alt="Cargo containers on ship"
-                        src="img/services/import export.jpeg" />
-                </div>
-                <div class="content">
-                    <div class="title">Import and Export Services</div>
-                    <p class="desc">Customs-ready import/export for telecom gear with documentation, insurance, and
-                        tracking.</p>
-                </div>
-                <div class="actions"><a class="cta" href="">Explore services →</a></div>
-            </article>
+        <!-- 12 -->
+        <article class="card" data-category="field">
+            <div class="media">
+                <span class="cat">Survey</span>
+                <img loading="lazy" alt="Surveyor with tripod" src="img/services/site survey.jpeg" />
+            </div>
+            <div class="content">
+                <div class="title">Site Survey</div>
+                <p class="desc">Detailed LOS, power, space, and structural audits with as-built documentation
+                    for deployment.
+                </p>
+            </div>
+        </article>
 
-            <!-- 12 -->
-            <article class="card" data-category="field">
-                <div class="media">
-                    <span class="cat">Survey</span>
-                    <img loading="lazy" alt="Surveyor with tripod"
-                        src="img/services/site survey.jpeg" />
-                </div>
-                <div class="content">
-                    <div class="title">Site Survey</div>
-                    <p class="desc">Detailed LOS, power, space, and structural audits with as-built documentation
-                        for deployment.
-                    </p>
-                </div>
-                <div class="actions"><a class="cta" href="">Explore services →</a></div>
-            </article>
+        <!-- 13 -->
+        <article class="card" data-category="optimization">
+            <div class="media">
+                <span class="cat">Optimization</span>
+                <img loading="lazy" alt="Microwave links on mast" src="images/microwave.png" />
+            </div>
+            <div class="content">
+                <div class="title">Microwave Strengthening</div>
+                <p class="desc">Path engineering, polarization, and QoS tuning to strengthen capacity and reduce
+                    outages.</p>
+            </div>
+        </article>
 
-            <!-- 13 -->
-            <article class="card" data-category="optimization">
-                <div class="media">
-                    <span class="cat">Optimization</span>
-                    <img loading="lazy" alt="Microwave links on mast"
-                        src="images/microwave.png" />
-                </div>
-                <div class="content">
-                    <div class="title">Microwave Strengthening</div>
-                    <p class="desc">Path engineering, polarization, and QoS tuning to strengthen capacity and reduce
-                        outages.</p>
-                </div>
-                <div class="actions"><a class="cta" href="">Explore services →</a></div>
-            </article>
+        <!-- 14 -->
+        <article class="card" data-category="deployment">
+            <div class="media">
+                <span class="cat">Deployment</span>
+                <img loading="lazy" alt="Engineers installing equipment" src="images/installationnew.jpeg" />
+            </div>
+            <div class="content">
+                <div class="title">Installation and Commissioning</div>
+                <p class="desc">Turnkey installation, integration, and acceptance testing with safety-first
+                    practices.</p>
+            </div>
+        </article>
 
-            <!-- 14 -->
-            <article class="card" data-category="deployment">
-                <div class="media">
-                    <span class="cat">Deployment</span>
-                    <img loading="lazy" alt="Engineers installing equipment"
-                        src="images/installationnew.jpeg" />
-                </div>
-                <div class="content">
-                    <div class="title">Installation and Commissioning</div>
-                    <p class="desc">Turnkey installation, integration, and acceptance testing with safety-first
-                        practices.</p>
-                </div>
-                <div class="actions"><a class="cta" href="">Explore services →</a></div>
-            </article>
+        <!-- 15 -->
+        <article class="card" data-category="deployment">
+            <div class="media">
+                <span class="cat">Deployment</span>
+                <img loading="lazy" alt="Small cell antenna setup" src="img/services/small cell.jpeg" />
+            </div>
+            <div class="content">
+                <div class="title">Small Cell Installation and Commissioning</div>
+                <p class="desc">Rapid small cell rollout to densify coverage and enhance capacity in urban
+                    hotspots.</p>
+            </div>
+        </article>
 
-            <!-- 15 -->
-            <article class="card" data-category="deployment">
-                <div class="media">
-                    <span class="cat">Deployment</span>
-                    <img loading="lazy" alt="Small cell antenna setup"
-                        src="img/services/small cell.jpeg" />
-                </div>
-                <div class="content">
-                    <div class="title">Small Cell Installation and Commissioning</div>
-                    <p class="desc">Rapid small cell rollout to densify coverage and enhance capacity in urban
-                        hotspots.</p>
-                </div>
-                <div class="actions"><a class="cta" href="">Explore services →</a></div>
-            </article>
-
-        </section>
+    </section>
     </div>
     <!-- end section -->
     <!-- start section -->
 
     <!-- end section -->
     <!-- start footer -->
-    <footer class="p-0 fs-16 border-top border-color-extra-medium-gray">
-        <div class="container">
-            <div class="row justify-content-center pt-6 sm-pt-40px">
-                <!-- start footer column -->
-                <div
-                    class="col-6 col-xl-3 col-lg-12 col-sm-6 last-paragraph-no-margin text-xl-start text-lg-center order-sm-1 lg-mb-50px sm-mb-30px">
-                    <a href="index.html" class="footer-logo mb-15px d-inline-block"><img
-                            src="images/demo-corporate-logo-black@2x.png    "
-                            data-at2x="images/demo-corporate-logo-black@2x.png" alt=""></a>
+    <!-- start footer -->
+        <style>
+            .footer {
+                background: #111827;
+                /* dark navy/charcoal */
+                color: #d1d5db;
+                /* light gray text */
+                padding: 60px 0 30px;
+                font-size: 15px;
+            }
 
-                    <p class="lh-30 w-90 xl-w-100 mx-lg-auto mx-xl-0">Bodhitree Technologies Pvt. Ltd. is a leading
-                        provider of Network Lifecycle Management Solutions to Operators & Service Providers.
+            .footer-logo img {
+                max-height: 40px;
+            }
 
-                    </p>
-                    <div class="elements-social social-icon-style-02 mt-20px xs-mt-15px">
-                        <ul class="medium-icon dark">
-                            <li class="my-0"><a class="facebook"
-                                    href="https://www.facebook.com/people/Bodhitree-Technologies-Pvt-Ltd/100057190400397/"
-                                    target="_blank"><i class="fa-brands fa-facebook-f"></i></a></li>
-                            <li class="my-0"><a class="dribbble"
-                                    href="https://www.linkedin.com/uas/login?session_redirect=https%3A%2F%2Fwww.linkedin.com%2Fcompany%2F13368154%2Fadmin%2F"
-                                    target="_blank"><i class="fa-brands fa-linkedin"></i></a></li>
-                            <li class="my-0"><a class="twitter" href="https://twitter.com/Bodhi09881061"
-                                    target="_blank"><i class="fa-brands fa-twitter"></i></a></li>
-                            <li class="my-0"><a class="instagram" href="https://www.instagram.com/bodhi.tree2020/"
-                                    target="_blank"><i class="fa-brands fa-instagram"></i></a></li>
+            .footer-text {
+                max-width: 320px;
+                line-height: 1.6;
+                font-size: 14px;
+            }
+
+            .footer-title {
+                font-size: 16px;
+                font-weight: 600;
+                color: #ffffff;
+                margin-bottom: 15px;
+            }
+
+            .footer-links {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+            }
+
+            .footer-links li {
+                margin-bottom: 8px;
+            }
+
+            .footer-links a {
+                color: #d1d5db;
+                text-decoration: none;
+                transition: color 0.3s ease;
+            }
+
+            .footer-links a:hover {
+                color: #6366f1;
+                /* accent color */
+            }
+
+            .social-links a {
+                display: inline-block;
+                margin-right: 12px;
+                font-size: 16px;
+                color: #d1d5db;
+                transition: color 0.3s ease;
+            }
+
+            .social-links a:hover {
+                color: #6366f1;
+                /* accent hover */
+            }
+
+            .footer-qr {
+                max-width: 120px;
+            }
+
+            .footer-bottom {
+                text-align: center;
+                border-top: 1px solid rgba(255, 255, 255, 0.1);
+                margin-top: 40px;
+                padding-top: 20px;
+                font-size: 14px;
+            }
+
+            .footer-bottom a {
+                color: #6366f1;
+                text-decoration: none;
+            }
+
+            .footer-bottom a:hover {
+                text-decoration: underline;
+            }
+        </style>
+        <!-- Modern Footer -->
+        <footer class="bg-dark text-white pt-5 pb-4 mt-3">
+            <div class="container ">
+                <div class="row">
+
+                    <!-- Logo / Company -->
+                    <div class="col-md-3 mb-3">
+                        <a href="index.html" class="footer-logo d-inline-block mb-3">
+                            <img src="images/demo-corporate-logo-black@2x.png" alt="Bodhitree Logo" />
+                        </a>
+                        <p class="small text">
+                            Bodhitree Technologies Pvt. Ltd. is a leading provider of Network Lifecycle Management
+                            Solutions to Operators & Service Providers.
+                        </p>
+                    </div>
+
+                    <!-- Quick Links -->
+                    <div class="col-md-3 mb-3">
+                        <h5 class="fw-semibold mb-3">Company</h5>
+                        <ul class="list-unstyled">
+                            <li><a href="index.html" class="text-white text-decoration-none">Home</a></li>
+                            <li><a href="demo-corporate-about.html" class="text-white text-decoration-none">About</a>
+                            </li>
+                            <li><a href="demo-corporate-services.html"
+                                    class="text-white text-decoration-none">Services</a></li>
                         </ul>
                     </div>
-                </div>
-                <!-- end footer column -->
-                <!-- start footer column -->
-                <div class="col-6 col-xl-2 col-lg-3 col-sm-4 xs-mb-30px order-sm-3 order-lg-2">
-                    <span class="fs-17 fw-600 d-block text-dark-gray mb-5px" style="color: red;">Quick Link</span>
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="demo-corporate-about.html">About</a>
 
-                        </li>
-                        <li><a href="demo-corporate-services.html">Services</a>
-                            <div
-                                class="bg-dark-gray fw-600 text-white lh-22 text-uppercase border-radius-30px ps-10px pe-10px fs-10 ms-10px d-inline-block align-middle">
-                                Hot</div>
-                        </li>
+                    <div class="col-md-3 mb-3">
+                        <h5 class="fw-semibold mb-3">Resources</h5>
+                        <ul class="list-unstyled">
+                            <li><a href="product.html" class="text-white text-decoration-none">Products</a></li>
+                            <li><a href="gallery.html" class="text-white text-decoration-none">Gallery</a></li>
+                            <li><a href="demo-corporate-contact.html"
+                                    class="text-white text-decoration-none">Contact</a></li>
+                        </ul>
+                    </div>
 
-                    </ul>
-                </div>
-                <!-- end footer column -->
-                <!-- start footer column -->
-                <div class="col-6 col-xl-2 col-lg-3 col-sm-4 xs-mb-30px order-sm-4 order-lg-3">
-                    <span class="fs-17 fw-600 d-block text-dark-gray mb-5px" style="color: red;">Quick Link</span>
-                    <ul>
-                        <li><a href="gallery.html">Gallery</a></li>
-                        <li><a href="product.html">Product</a></li>
-                        <li><a href="career.html">Career</a></li>
-                        <li><a href="demo-corporate-contact.html">Contact</a></li>
-                    </ul>
-                </div>
-                <!-- end footer column -->
-                <!-- start footer column -->
+                    <!-- Social Media -->
+                    <div class="col-md-3 mb-3">
+                        <h5 class="fw-semibold mb-3">Follow Us</h5>
+                        <a href="https://www.facebook.com/people/Bodhitree-Technologies-Pvt-Ltd/100057190400397/"
+                            class="text-white me-3"><i class="bi bi-facebook"></i></a>
+                        <a href="https://twitter.com/Bodhi09881061" class="text-white me-3"><i
+                                class="bi bi-twitter"></i></a>
+                        <a href="https://www.instagram.com/bodhi.tree2020/" class="text-white me-3"><i
+                                class="bi bi-instagram"></i></a>
+                        <a href="https://www.linkedin.com/company/13368154/" class="text-white"><i
+                                class="bi bi-linkedin"></i></a>
+                    </div>
 
-                <!-- end footer column -->
-                <!-- start footer column -->
-                <div class="col-xl-3 col-lg-3 col-sm-6 md-mb-50px sm-mb-30px xs-mb-0 order-sm-2 order-lg-5">
-                    <img src="images/qrcode.png" alt="">
                 </div>
-                <!-- end footer column -->
+
+
+                <!-- Copyright -->
+                <div class="text-center pt-3 border-top border-secondary mt-4">
+                    <p class="small mb-0">
+                        &copy; 2024 Bodhitree Technologies. All Rights Reserved.
+                    </p>
+                </div>
             </div>
-            <div class="row justify-content-center align-items-center pt-2">
-                <!-- start divider -->
-                <div class="col-12">
-                    <div class="divider-style-03 divider-style-03-01 border-color-transparent-white-light"></div>
-                </div>
-                <!-- end divider -->
-                <!-- start copyright -->
-                <div
-                    class="col-lg-5 pt-35px pb-35px md-pt-0 order-2 order-lg-1 text-center text-lg-start last-paragraph-no-margin">
-                    <p>&copy; 2024 All Rights Reserved. Developed By <a href="http://maftechnology.com/" target="_blank"
-                            class="text-dark-gray fw-600 text-decoration-line-bottom">Maftechnology</a></p>
-                </div>
-                <!-- end copyright -->
-                <!-- start footer menu -->
-
-                <!-- end footer menu -->
-            </div>
-        </div>
-    </footer>
+        </footer>
+        <!-- end footer -->
     <!-- end footer -->
     <!-- start scroll progress -->
     <div class="scroll-progress d-none d-xxl-block">
@@ -698,7 +732,6 @@
         </a>
     </div>
     <!-- end scroll progress -->
-    </div>
     <!-- javascript libraries -->
     <script type="text/javascript" src="js/jquery.js"></script>
     <script type="text/javascript" src="js/vendors.min.js"></script>
