@@ -110,7 +110,8 @@
                             Products
                         </h1>
                         <p class="text-white fs-5 fw-300 mt-3">
-                            Innovative products that simplify network operations, boost efficiency, and empower businesses in the digital era.
+                            Innovative products that simplify network operations, boost efficiency, and empower
+                            businesses in the digital era.
                         </p>
                     </div>
 
@@ -128,585 +129,520 @@
         </section>
 
         <!-- start section -->
-        <section
-            class="bg-gradient-quartz-white position-relative z-index-0 border-radius-6px lg-border-radius-0px overflow-hidden" id="down-section">
-            <div class="container">
-                <div class="row justify-content-center mb-3">
-                    <div class="col-xl-5 col-lg-6 text-center">
-                        <h3 class="text-dark-gray fw-700 ls-minus-1px" style="color: #de2605;">Our Products</h3>
-                    </div>
-                </div>
-                <div
-                    class="row row-cols-1 row-cols-xl-3 row-cols-lg-3 row-cols-md-2 row-cols-sm-1 justify-content-center mb-5">
-                    <!-- START INTERACTIVE PRODUCT CARD 1 -->
-                    <!-- Example Connectors Product Card -->
-                    <!-- Connectors product card with toggle -->
-                    <div class="col interactive-banner-style-02 hover-box light-hover md-mb-30px product-card"
-                        id="connectors-card">
-                        <div class="card-content">
-                            <button onclick="toggleSubProducts('connectors-subproducts')" type="button"
-                                style="background:none; border:none; padding:0; cursor:pointer; width:100%; text-align:left;">
-                                <img src="images/product/g22.png" alt="Connectors" />
-                                <h3>Connectors</h3>
-                            </button>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                margin: 0;
+                padding: 20px;
+                background: #f8f8f8;
+            }
 
-                            <!-- Sub-products container with cards, initially hidden -->
-                            <div id="connectors-subproducts" style="display:none; margin-top: 20px;">
-                                <div style="display: flex; flex-wrap: wrap; gap: 16px;">
-                                    <!-- Each sub-product card -->
-                                    <div
-                                        style="width: 150px; border: 1px solid #ddd; border-radius: 8px; overflow: hidden; text-align: center; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
-                                        <img src="images/product/g24.png" alt="Power Connector"
-                                            style="width: 100%; height: auto;" />
-                                        <div style="padding: 8px; font-weight: 600;">Power Connector</div>
-                                    </div>
+            h1 {
+                text-align: center;
+                margin-bottom: 20px;
+            }
 
-                                    <div
-                                        style="width: 150px; border: 1px solid #ddd; border-radius: 8px; overflow: hidden; text-align:center; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
-                                        <img src="images/product/g22.png" alt="RA Type Connector"
-                                            style="width: 100%; height: auto;" />
-                                        <div style="padding: 8px; font-weight: 600;">RA Type Connector</div>
-                                    </div>
+            .categories {
+                display: flex;
+                justify-content: center;
+                gap: 15px;
+                margin-bottom: 30px;
+                flex-wrap: wrap;
+            }
 
-                                    <div
-                                        style="width: 150px; border: 1px solid #ddd; border-radius: 8px; overflow: hidden; text-align:center; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
-                                        <img src="images/product/IF connector.JPG" alt="IF Connector"
-                                            style="width: 100%; height: auto;" />
-                                        <div style="padding: 8px; font-weight: 600;">IF Connector</div>
-                                    </div>
+            .categories button {
+                padding: 10px 20px;
+                border: none;
+                background: #007BFF;
+                color: #fff;
+                border-radius: 5px;
+                cursor: pointer;
+                font-size: 16px;
+            }
 
-                                    <div
-                                        style="width: 150px; border: 1px solid #ddd; border-radius: 8px; overflow: hidden; text-align:center; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
-                                        <img src="images/product/N Male connector half inch RF cable.JPG"
-                                            alt="IF Connector" style="width: 100%; height: auto;" />
-                                        <div style="padding: 8px; font-weight: 600;">N Male Connector half-inch RF cable
-                                        </div>
-                                    </div>
+            .categories button.active {
+                background: #0056b3;
+            }
 
-                                    <div
-                                        style="width: 150px; border: 1px solid #ddd; border-radius: 8px; overflow: hidden; text-align:center; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
-                                        <img src="images/product/RRU Power Connector.JPG" alt="IF Connector"
-                                            style="width: 100%; height: auto;" />
-                                        <div style="padding: 8px; font-weight: 600;">RRU Power Connector</div>
-                                    </div>
+            .products {
+                display: none;
+                grid-template-columns: repeat(4, 1fr);
+                gap: 20px;
+            }
 
-                                    <div
-                                        style="width: 150px; border: 1px solid #ddd; border-radius: 8px; overflow: hidden; text-align:center; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
-                                        <img src="images/product/RF Adopter.JPG" alt="IF Connector"
-                                            style="width: 100%; height: auto;" />
-                                        <div style="padding: 8px; font-weight: 600;">RF Adopter</div>
-                                    </div>
+            .products.active {
+                display: grid;
+            }
 
-                                    <div
-                                        style="width: 150px; border: 1px solid #ddd; border-radius: 8px; overflow: hidden; text-align:center; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
-                                        <img src="images/product/N Male and 4.3.10 male connector.JPG"
-                                            alt="IF Connector" style="width: 100%; height: auto;" />
-                                        <div style="padding: 8px; font-weight: 600;">N Male & 4.3.10 Male Connector
-                                        </div>
-                                    </div>
+            .product img {
+                width: 100%;
+                border-radius: 8px;
+                cursor: pointer;
+                transition: transform 0.2s;
+            }
 
-                                    <!-- Add more sub-product cards similarly -->
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+            .product img:hover {
+                transform: scale(1.05);
+            }
 
+            /* Modal */
+            .modal {
+                display: none;
+                position: fixed;
+                z-index: 1000;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 0, 0, 0.8);
+                justify-content: center;
+                align-items: center;
+            }
 
-                    <!-- END INTERACTIVE PRODUCT CARD 1 -->
-                    <!-- Second interactive product card: CABLES -->
-                    <div class="col interactive-banner-style-02 hover-box light-hover md-mb-30px product-card"
-                        id="cables-card">
-                        <div class="card-content">
-                            <button onclick="toggleSubProducts('cables-subproducts')" type="button"
-                                style="background:none; border:none; padding:0; cursor:pointer; width:100%; text-align:left;">
-                                <img src="images/product/ESB cable.JPG" alt="Cables" />
-                                <h3>Cables</h3>
-                            </button>
+            .modal img {
+                max-width: 90%;
+                max-height: 90%;
+                border-radius: 10px;
+            }
 
-                            <!-- Sub-products container with cards, initially hidden -->
-                            <div id="cables-subproducts" style="display:none; margin-top: 20px;">
-                                <div style="display: flex; flex-wrap: wrap; gap: 16px; padding-bottom: 20px;">
-                                    <!-- Each sub-product card -->
-                                    <div
-                                        style="width: 150px; border: 1px solid #ddd; border-radius: 8px; overflow: hidden; text-align: center; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
-                                        <img src="images/product/Ericsson Power cable.JPG" alt="Power Connector"
-                                            style="width: 100%; height: auto;" />
-                                        <div style="padding: 8px; font-weight: 600;">Ericsson Power Cable</div>
-                                    </div>
+            .modal.close {
+                cursor: pointer;
+            }
 
-                                    <div
-                                        style="width: 150px; border: 1px solid #ddd; border-radius: 8px; overflow: hidden; text-align:center; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
-                                        <img src="images/product/g30.png" alt="RA Type Connector"
-                                            style="width: 100%; height: auto;" />
-                                        <div style="padding: 8px; font-weight: 600;">OVP & Alaram Cable</div>
-                                    </div>
+            @media (max-width: 900px) {
+                .products {
+                    grid-template-columns: repeat(2, 1fr);
+                    /* 2 per row on smaller screens */
+                }
+            }
 
-                                    <div
-                                        style="width: 150px; border: 1px solid #ddd; border-radius: 8px; overflow: hidden; text-align:center; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
-                                        <img src="images/product/DUG Sync Cable.JPG" alt="IF Connector"
-                                            style="width: 100%; height: auto;" />
-                                        <div style="padding: 8px; font-weight: 600;">DUG Sync Cable</div>
-                                    </div>
+            @media (max-width: 600px) {
+                .products {
+                    grid-template-columns: 1fr;
+                    /* 1 per row on mobile */
+                }
+            }
 
-                                    <div
-                                        style="width: 150px; border: 1px solid #ddd; border-radius: 8px; overflow: hidden; text-align:center; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
-                                        <img src="images/product/ESB cable.JPG" alt="IF Connector"
-                                            style="width: 100%; height: auto;" />
-                                        <div style="padding: 8px; font-weight: 600;">ESB Cable
-                                        </div>
-                                    </div>
+            .filters {
+                display: grid;
+                grid-template-columns: repeat(5, 1fr);
+                gap: 15px;
+                width: 100%;
+            }
 
-                                    <div
-                                        style="width: 150px; border: 1px solid #ddd; border-radius: 8px; overflow: hidden; text-align:center; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
-                                        <img src="images/product/FBBC Power and Bus Cable.JPG" alt="IF Connector"
-                                            style="width: 100%; height: auto;" />
-                                        <div style="padding: 8px; font-weight: 600;">FBBC Power & Bus Cable</div>
-                                    </div>
+            .chip {
+                display: block;
+                width: 100%;
+                padding: 12px 24px;
+                border: 1px solid #ccc;
+                border-radius: 6px;
+                background: #fff;
+                cursor: pointer;
+                text-align: center;
+                font-size: 16px;
+                font-weight: 500;
+                transition: all 0.3s ease;
+            }
 
-                                    <div
-                                        style="width: 150px; border: 1px solid #ddd; border-radius: 8px; overflow: hidden; text-align:center; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
-                                        <img src="images/product/GPS and Alaram Cable Nokia.JPG" alt="IF Connector"
-                                            style="width: 100%; height: auto;" />
-                                        <div style="padding: 8px; font-weight: 600;">GPS & Alaram Cable Nokia</div>
-                                    </div>
+            .chip:hover {
+                border-color: #de2605;
+                box-shadow: 0 0 0 4px rgba(222, 38, 5, 0.3);
+            }
 
-                                    <div
-                                        style="width: 150px; border: 1px solid #ddd; border-radius: 8px; overflow: hidden; text-align:center; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
-                                        <img src="images/product/RF jumper.JPG" alt="IF Connector"
-                                            style="width: 100%; height: auto;" />
-                                        <div style="padding: 8px; font-weight: 600;">RF Jumper Cable
-                                        </div>
-                                    </div>
+            .chip.active {
+                background: #de2605;
+                color: #fff;
+                border-color: #de2605;
+            }
 
-                                    <div
-                                        style="width: 150px; border: 1px solid #ddd; border-radius: 8px; overflow: hidden; text-align:center; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
-                                        <img src="images/product/Power Cable.JPG" alt="IF Connector"
-                                            style="width: 100%; height: auto;" />
-                                        <div style="padding: 8px; font-weight: 600;">Power Cable
-                                        </div>
-                                    </div>
+            .filters-wrapper {
+                display: flex;
+                justify-content: center;
+                margin-bottom: 10px;
+            }
+        </style>
 
-                                    <div
-                                        style="width: 150px; border: 1px solid #ddd; border-radius: 8px; overflow: hidden; text-align:center; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
-                                        <img src="images/product/RTN Power cable.JPG" alt="IF Connector"
-                                            style="width: 100%; height: auto;" />
-                                        <div style="padding: 8px; font-weight: 600;">RTN Power Cable
-                                        </div>
-                                    </div>
-
-                                    <div
-                                        style="width: 150px; border: 1px solid #ddd; border-radius: 8px; overflow: hidden; text-align:center; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
-                                        <img src="images/product/SAU and alaram cable.JPG" alt="IF Connector"
-                                            style="width: 100%; height: auto;" />
-                                        <div style="padding: 8px; font-weight: 600;">SAU & Alaram Cable
-                                        </div>
-                                    </div>
-
-                                    <div
-                                        style="width: 150px; border: 1px solid #ddd; border-radius: 8px; overflow: hidden; text-align:center; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
-                                        <img src="images/product/Surge arrester and GPS signal Cable.JPG"
-                                            alt="IF Connector" style="width: 100%; height: auto;" />
-                                        <div style="padding: 8px; font-weight: 600;">Surge Arrester & GPS Signal Cable
-                                        </div>
-                                    </div>
-
-                                    <div
-                                        style="width: 150px; border: 1px solid #ddd; border-radius: 8px; overflow: hidden; text-align:center; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
-                                        <img src="images/product/g8.jpg" alt="IF Connector"
-                                            style="width: 100%; height: auto;" />
-                                        <div style="padding: 8px; font-weight: 600;">ZTE Cable
-                                        </div>
-                                    </div>
-
-                                    <div
-                                        style="width: 150px; border: 1px solid #ddd; border-radius: 8px; overflow: hidden; text-align:center; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
-                                        <img src="images/product/g34.png" alt="IF Connector"
-                                            style="width: 100%; height: auto;" />
-                                        <div style="padding: 8px; font-weight: 600;">ZTE Signal Cable
-                                        </div>
-                                    </div>
-
-                                    <div
-                                        style="width: 150px; border: 1px solid #ddd; border-radius: 8px; overflow: hidden; text-align:center; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
-                                        <img src="images/product/Signal Cable.JPG" alt="IF Connector"
-                                            style="width: 100%; height: auto;" />
-                                        <div style="padding: 8px; font-weight: 600;">Signal Cable
-                                        </div>
-                                    </div>
-
-                                    <div
-                                        style="width: 150px; border: 1px solid #ddd; border-radius: 8px; overflow: hidden; text-align:center; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
-                                        <img src="images/product/g49.jpeg" alt="IF Connector"
-                                            style="width: 100%; height: auto;" />
-                                        <div style="padding: 8px; font-weight: 600;">Ethernet Cable
-                                        </div>
-                                    </div>
-
-                                    <div
-                                        style="width: 150px; border: 1px solid #ddd; border-radius: 8px; overflow: hidden; text-align:center; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
-                                        <img src="images/product/g33.png" alt="IF Connector"
-                                            style="width: 100%; height: auto;" />
-                                        <div style="padding: 8px; font-weight: 600;">TX RX Cable & CNT Cable
-                                        </div>
-                                    </div>
-
-                                    <!-- Add more sub-product cards similarly -->
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Third interactive product card: CLAMPS -->
-                    <div class="col interactive-banner-style-02 hover-box light-hover md-mb-30px product-card"
-                        id="clamps-card">
-                        <div class="card-content">
-                            <button onclick="toggleSubProducts('clamps-subproducts')" type="button"
-                                style="background:none; border:none; padding:0; cursor:pointer; width:100%; text-align:left;">
-                                <img src="images/product/RRU clamp Ericsson.JPG" alt="Cables" />
-                                <h3>Clamps</h3>
-                            </button>
-
-                            <!-- Sub-products container with cards, initially hidden -->
-                            <div id="clamps-subproducts" style="display:none; margin-top: 20px;">
-                                <div style="display: flex; flex-wrap: wrap; gap: 16px;">
-                                    <!-- Each sub-product card -->
-                                    <div
-                                        style="width: 150px; border: 1px solid #ddd; border-radius: 8px; overflow: hidden; text-align: center; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
-                                        <img src="images/product/g5.png" alt="Power Connector"
-                                            style="width: 100%; height: auto;" />
-                                        <div style="padding: 8px; font-weight: 600;">GSM Clamp</div>
-                                    </div>
-
-                                    <div
-                                        style="width: 150px; border: 1px solid #ddd; border-radius: 8px; overflow: hidden; text-align:center; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
-                                        <img src="img/product/Support Rod.png" alt="RA Type Connector"
-                                            style="width: 100%; height: auto;" />
-                                        <div style="padding: 8px; font-weight: 600;">Support Rod</div>
-                                    </div>
-
-                                    <div
-                                        style="width: 150px; border: 1px solid #ddd; border-radius: 8px; overflow: hidden; text-align:center; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
-                                        <img src="images/product/RRU clamp.JPG" alt="IF Connector"
-                                            style="width: 100%; height: auto;" />
-                                        <div style="padding: 8px; font-weight: 600;">RRU Clamp MT</div>
-                                    </div>
-
-                                    <div
-                                        style="width: 150px; border: 1px solid #ddd; border-radius: 8px; overflow: hidden; text-align:center; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
-                                        <img src="img/product/RRU Clamp.png" alt="IF Connector"
-                                            style="width: 100%; height: auto;" />
-                                        <div style="padding: 8px; font-weight: 600;">RRU Clamp
-                                        </div>
-                                    </div>
-
-                                    <div
-                                        style="width: 150px; border: 1px solid #ddd; border-radius: 8px; overflow: hidden; text-align:center; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
-                                        <img src="images/product/MW 1.8M anteena Clamp.JPG" alt="IF Connector"
-                                            style="width: 100%; height: auto;" />
-                                        <div style="padding: 8px; font-weight: 600;">MW 1.8m Anteena Clamp</div>
-                                    </div>
-
-                                    <div
-                                        style="width: 150px; border: 1px solid #ddd; border-radius: 8px; overflow: hidden; text-align:center; box-shadow: 0 2px 5px rgba(24, 20, 20, 0.1);">
-                                        <img src="images/product/RRU clamp Ericsson.JPG" alt="IF Connector"
-                                            style="width: 100%; height: auto;" />
-                                        <div style="padding: 8px; font-weight: 600;">RRU Clamp Ericsson</div>
-                                    </div>
-
-                                    <div
-                                        style="width: 150px; border: 1px solid #ddd; border-radius: 8px; overflow: hidden; text-align:center; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
-                                        <img src="images/product/MW 0.6 & 0.9m Antenna Clamp.JPG" alt="IF Connector"
-                                            style="width: 100%; height: auto;" />
-                                        <div style="padding: 8px; font-weight: 600;">MW 0.6 & 0.9m Anteena Clamp
-                                        </div>
-                                    </div>
-
-                                    <div
-                                        style="width: 150px; border: 1px solid #ddd; border-radius: 8px; overflow: hidden; text-align:center; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
-                                        <img src="images/product/MW 1.2 antenna Clamps.JPG" alt="IF Connector"
-                                            style="width: 100%; height: auto;" />
-                                        <div style="padding: 8px; font-weight: 600;">MW 1.2m Anteena Clamp
-                                        </div>
-                                    </div>
-                                    <!-- Add more sub-product cards similarly -->
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Example: Fourth interactive product card: Installation Kit -->
-                    <div class="col interactive-banner-style-02 hover-box light-hover md-mb-30px product-card"
-                        id="installation-card">
-                        <div class="card-content">
-                            <button onclick="toggleSubProducts('installation-subproducts')" type="button"
-                                style="background:none; border:none; padding:0; cursor:pointer; width:100%; text-align:left;">
-                                <img src="img/product/Installation Kit.png" alt="installation Kit" />
-                                <h3>Installation Kit</h3>
-                            </button>
-
-                            <!-- Sub-products container with cards, initially hidden -->
-                            <div id="installation-subproducts" style="display:none; margin-top: 20px;">
-                                <div style="display: flex; flex-wrap: wrap; gap: 16px;">
-                                    <!-- Each sub-product card -->
-                                    <div
-                                        style="width: 150px; border: 1px solid #ddd; border-radius: 8px; overflow: hidden; text-align: center; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
-                                        <img src="img/product/Installation Kit.png" alt="Power Connector"
-                                            style="width: 100%; height: auto;" />
-                                        <div style="padding: 8px; font-weight: 600;">Installation Kit</div>
-                                    </div>
-
-                                    <div
-                                        style="width: 150px; border: 1px solid #ddd; border-radius: 8px; overflow: hidden; text-align:center; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
-                                        <img src="img/product/Kit.png" alt="RA Type Connector"
-                                            style="width: 100%; height: auto;" />
-                                        <div style="padding: 8px; font-weight: 600;">Installation Kit</div>
-                                    </div>
-
-                                    <div
-                                        style="width: 150px; border: 1px solid #ddd; border-radius: 8px; overflow: hidden; text-align:center; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
-                                        <img src="img/product/IF Installation Kit.png" alt="IF Connector"
-                                            style="width: 100%; height: auto;" />
-                                        <div style="padding: 8px; font-weight: 600;">IF Installation Kit</div>
-                                    </div>
-
-                                    <div
-                                        style="width: 150px; border: 1px solid #ddd; border-radius: 8px; overflow: hidden; text-align:center; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
-                                        <img src="img/product/IP Seal.png" alt="IF Connector"
-                                            style="width: 100%; height: auto;" />
-                                        <div style="padding: 8px; font-weight: 600;">IP Seal
-                                        </div>
-                                    </div>
-
-                                    <div
-                                        style="width: 150px; border: 1px solid #ddd; border-radius: 8px; overflow: hidden; text-align:center; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
-                                        <img src="img/product/Flexi BTS Cover.png" alt="IF Connector"
-                                            style="width: 100%; height: auto;" />
-                                        <div style="padding: 8px; font-weight: 600;">Flexi BTS Cover</div>
-                                    </div>
-
-                                    <div
-                                        style="width: 150px; border: 1px solid #ddd; border-radius: 8px; overflow: hidden; text-align:center; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
-                                        <img src="img/product/Power Boot.png" alt="IF Connector"
-                                            style="width: 100%; height: auto;" />
-                                        <div style="padding: 8px; font-weight: 600;">Power Boot</div>
-                                    </div>
-
-                                    <div
-                                        style="width: 150px; border: 1px solid #ddd; border-radius: 8px; overflow: hidden; text-align:center; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
-                                        <img src="img/product/Junction Box.png" alt="IF Connector"
-                                            style="width: 100%; height: auto;" />
-                                        <div style="padding: 8px; font-weight: 600;">Junction Box
-                                        </div>
-                                    </div>
-
-                                    <div
-                                        style="width: 150px; border: 1px solid #ddd; border-radius: 8px; overflow: hidden; text-align:center; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
-                                        <img src="img/product/IDU GPS Kit.png" alt="IF Connector"
-                                            style="width: 100%; height: auto;" />
-                                        <div style="padding: 8px; font-weight: 600;">IDU GPS Kit
-                                        </div>
-                                    </div>
-
-                                    <!-- Add more sub-product cards similarly -->
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Example: Fifth interactive product card: Adopter Plates -->
-                    <div class="col interactive-banner-style-02 hover-box light-hover md-mb-30px product-card"
-                        id="adopter-card">
-                        <div class="card-content">
-                            <button onclick="toggleSubProducts('adopter-subproducts')" type="button"
-                                style="background:none; border:none; padding:0; cursor:pointer; width:100%; text-align:left;">
-                                <img src="images/product/g38.jpeg" alt="installation Kit" />
-                                <h3>Adopter Plates</h3>
-                            </button>
-
-                            <!-- Sub-products container with cards, initially hidden -->
-                            <div id="adopter-subproducts" style="display:none; margin-top: 20px;">
-                                <div style="display: flex; flex-wrap: wrap; gap: 16px;">
-                                    <!-- Each sub-product card -->
-                                    <div
-                                        style="width: 150px; border: 1px solid #ddd; border-radius: 8px; overflow: hidden; text-align: center; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
-                                        <img src="images/product/g38.jpeg" alt="Power Connector"
-                                            style="width: 100%; height: auto;" />
-                                        <div style="padding: 8px; font-weight: 600;">OMT</div>
-                                    </div>
-
-                                    <div
-                                        style="width: 150px; border: 1px solid #ddd; border-radius: 8px; overflow: hidden; text-align:center; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
-                                        <img src="images/product/g6.png" alt="RA Type Connector"
-                                            style="width: 100%; height: auto;" />
-                                        <div style="padding: 8px; font-weight: 600;">Plates</div>
-                                    </div>
-                                    <!-- Add more sub-product cards similarly -->
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <script>
-                        function toggleSubProducts(id) {
-                            const elem = document.getElementById(id);
-                            if (!elem) return;
-
-                            if (elem.style.display === "none" || elem.style.display === "") {
-                                elem.style.display = "block";
-                            } else {
-                                elem.style.display = "none";
-                            }
-                        }
-                    </script>
-
+        <section id="down-section" style="padding: 50px;">
+            <h2 class="fw-700 ls-minus-1px" style="color: #de2605;">Our Products</h2>
+            <div class="filters-wrapper">
+                <div class="filters" id="filters">
+                    <button class="chip active" onclick="showCategory('connectors')">Connectors</button>
+                    <button class="chip" onclick="showCategory('cables')">Cables</button>
+                    <button class="chip" onclick="showCategory('clamps')">Clamps</button>
+                    <button class="chip" onclick="showCategory('install')">Installation Kit</button>
+                    <button class="chip" onclick="showCategory('adopter')">Adopter Plates</button>
                 </div>
             </div>
         </section>
+
+        <section class="pt-0 pb-5">
+            <!-- Products -->
+            <div id="connectors" class="products active">
+                <div class="product"><img src="images/product/g24.png" alt=""></div>
+                <div class="product"><img src="images/product/g22.png" alt=""></div>
+                <div class="product"><img src="images/product/IF connector.JPG" alt=""></div>
+                <div class="product"><img src="images/product/N Male connector half inch RF cable.JPG" alt=""></div>
+                <div class="product"><img src="images/product/RRU Power Connector.JPG" alt=""></div>
+                <div class="product"><img src="images/product/RF Adopter.JPG" alt=""></div>
+                <div class="product"><img src="images/product/N Male and 4.3.10 male connector.JPG" alt=""></div>
+            </div>
+
+            <div id="cables" class="products">
+                <div class="product"><img src="img/product/cables/Ericsson Power cable.png" alt="T-Shirt"></div>
+                <div class="product"><img src="img/product/cables/dug sync cable.png" alt="Jeans"></div>
+                <div class="product"><img src="img/product/cables/ESB cable.png" alt="Jacket"></div>
+                <div class="product"><img src="img/product/cables/FBBC Power and Bus Cable.png" alt="T-Shirt"></div>
+                <div class="product"><img src="img/product/cables/rnt power cable.png" alt="Jeans"></div>
+                <div class="product"><img src="img/product/cables/sau and alarm cable.png" alt="Jacket"></div>
+                <div class="product"><img src="img/product/cables/signal cable.png" alt="Jacket"></div>
+                <div class="product"><img src="img/product/cables/ZTE signal cable.png" alt="Jacket"></div>
+                <div class="product"><img src="img/product/cables/ChatGPT Image Sep 11, 2025, 05_43_19 PM.png"
+                        alt="Jacket"></div>
+            </div>
+
+            <div id="clamps" class="products">
+                <div class="product"><img src="img/product/clamp/gsm clamp.png" alt="Sneakers"></div>
+                <div class="product"><img src="img/product/clamp/support road.png" alt="Boots"></div>
+                <div class="product"><img src="img/product/clamp//RRU clamp mt.png" alt="Sandals"></div>
+                <div class="product"><img src="img/product/clamp/RRU.png" alt="Sneakers"></div>
+                <div class="product"><img src="img/product/clamp/MW 1.8 Antieena clamp.png" alt="Boots"></div>
+                <div class="product"><img src="img/product/clamp/RRU CLAMP ERICSSON.png" alt="Sandals"></div>
+                <div class="product"><img src="img/product/clamp/mw 0.6  & 0.9 antina clam.png" alt="Boots"></div>
+                <div class="product"><img src="img/product/clamp/MW 1.2 Antina clamp.png" alt="Sandals"></div>
+            </div>
+
+            <div id="install" class="products">
+                <div class="product"><img src="img/product/Installation Kit.png" alt="Sneakers"></div>
+                <div class="product"><img src="img/product/IF Installation Kit.png" alt="Sandals"></div>
+                <div class="product"><img src="img/product/IP Seal.png" alt="Sneakers"></div>
+                <div class="product"><img src="img/product/Flexi BTS Cover.png" alt="Boots"></div>
+                <div class="product"><img src="img/product/Power Boot.png" alt="Sandals"></div>
+                <div class="product"><img src="img/product/Junction Box.png" alt="Boots"></div>
+                <div class="product"><img src="img/product/IDU GPS Kit.png" alt="Sandals"></div>
+                <!-- <div class="product"><img src="img/product/Kit.png" alt="Boots"></div> -->
+
+            </div>
+
+            <div id="adopter" class="products">
+                <div class="product"><img src="img/product/omt.png" alt="Sneakers"></div>
+                <div class="product"><img src="img/product/plates.png" alt="Boots"></div>
+            </div>
+
+            <!-- Modal -->
+            <div id="imgModal" class="modal" onclick="closeModal()">
+                <img id="modalImg" src="" alt="">
+            </div>
+        </section>
+
+        <script>
+            function showCategory(category) {
+                let products = document.querySelectorAll('.products');
+                products.forEach(p => p.classList.remove('active'));
+                document.getElementById(category).classList.add('active');
+                event.target.classList.add('active');
+            }
+
+            const chips = document.querySelectorAll(".chip");
+
+            chips.forEach(chip => {
+                chip.addEventListener("click", function () {
+                    chips.forEach(c => c.classList.remove("active"));
+                    this.classList.add("active");
+                });
+            });
+
+            // Image Zoom (Modal)
+            const modal = document.getElementById("imgModal");
+            const modalImg = document.getElementById("modalImg");
+
+            document.querySelectorAll('.product img').forEach(img => {
+                img.addEventListener('click', function () {
+                    modal.style.display = "flex";
+                    modalImg.src = this.src;
+                });
+            });
+
+            function closeModal() {
+                modal.style.display = "none";
+            }
+        </script>
         <!-- end section -->
 
         <!-- start footer -->
+        <!-- start footer -->
         <style>
+            /* Footer Base */
             .footer {
-                background: #111827;
-                color: #d1d5db;
-                padding: 60px 0 30px;
-                font-size: 15px;
-            }
-
-            .footer-logo img {
-                max-height: 40px;
-            }
-
-            .footer-text {
-                max-width: 320px;
+                background: #111;
+                color: #ddd;
+                padding: 60px 40px 30px;
+                font-family: "Segoe UI", sans-serif;
                 line-height: 1.6;
-                font-size: 14px;
             }
 
-            .footer-title {
-                font-size: 16px;
-                font-weight: 600;
-                color: #ffffff;
+            /* Footer Grid */
+            .footer-grid {
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                gap: 60px;
+            }
+
+            .footer-grid-top {
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                gap: 10px;
+                margin-bottom: 40px;
+            }
+
+            .footer-grid-bottom {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 80px;
+                margin-bottom: 30px;
+            }
+
+            .footer h3,
+            .footer h4 {
+                color: #fff;
                 margin-bottom: 15px;
+                font-weight: 600;
+                font-size: xx-large;
             }
 
-            .footer-links {
+            /* Links */
+            .footer .links {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+            }
+
+            .footer ul {
                 list-style: none;
                 padding: 0;
                 margin: 0;
             }
 
-            .footer-links li {
-                margin-bottom: 8px;
+            .footer ul li {
+                margin-bottom: 10px;
             }
 
-            .footer-links a {
-                color: #d1d5db;
+            .footer ul li a {
+                color: #ccc;
                 text-decoration: none;
                 transition: color 0.3s ease;
             }
 
-            .footer-links a:hover {
-                color: #6366f1;
-                /* accent color */
+            .footer ul li a:hover {
+                color: #de2605;
             }
 
-            .social-links a {
-                display: inline-block;
-                margin-right: 12px;
-                font-size: 16px;
-                color: #d1d5db;
-                transition: color 0.3s ease;
-            }
-
-            .social-links a:hover {
-                color: #6366f1;
-                /* accent hover */
-            }
-
-            .footer-qr {
-                max-width: 120px;
-            }
-
-            .footer-bottom {
-                text-align: center;
-                border-top: 1px solid rgba(255, 255, 255, 0.1);
-                margin-top: 40px;
-                padding-top: 20px;
+            /* Newsletter */
+            .footer .newsletter p {
                 font-size: 14px;
+                color: #bbb;
+                margin-bottom: 15px;
             }
 
-            .footer-bottom a {
-                color: #6366f1;
-                text-decoration: none;
+            .footer .newsletter form {
+                display: flex;
+                margin-bottom: 15px;
             }
+
+            .footer .newsletter input {
+                flex: 1;
+                padding: 10px;
+                border: none;
+                border-radius: 6px 0 0 6px;
+                outline: none;
+            }
+
+            .footer .newsletter button {
+                padding: 10px 18px;
+                border: none;
+                background: #de2605;
+                color: #fff;
+                border-radius: 0 6px 6px 0;
+                cursor: pointer;
+                transition: background 0.3s ease;
+            }
+
+            .footer .newsletter button:hover {
+                background: #b81f04;
+            }
+
+            /* Socials */
+            .footer .socials {
+                display: flex;
+                gap: 12px;
+            }
+
+            .footer .socials a {
+                display: inline-flex;
+                justify-content: center;
+                align-items: center;
+                width: 35px;
+                height: 35px;
+                background: #222;
+                color: #fff;
+                border-radius: 50%;
+                transition: all 0.3s ease;
+            }
+
+            .footer .socials a:hover {
+                background: #de2605;
+                transform: translateY(-3px);
+            }
+
+            /* Bottom Section */
+            .footer-bottom {
+                border-top: 1px solid #333;
+                padding-top: 20px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                gap: 10px;
+                text-align: center;
+                font-size: 14px;
+                color: #aaa;
+            }
+
 
             .footer-bottom a:hover {
-                text-decoration: underline;
+                color: #de2605;
+            }
+
+            /* Responsive */
+            @media (max-width: 900px) {
+                .footer-grid {
+                    grid-template-columns: 1fr 1fr;
+                }
+            }
+
+            @media (max-width: 600px) {
+                .footer-grid {
+                    grid-template-columns: 1fr;
+                }
+
+                .footer .brand {
+                    flex-direction: column;
+                }
+
+                .footer .newsletter form {
+                    flex-direction: column;
+                }
+
+                .footer .newsletter input,
+                .footer .newsletter button {
+                    border-radius: 6px;
+                    margin-bottom: 10px;
+                    width: 100%;
+                }
+            }
+
+            /* Put this AFTER your other .footer rules so it wins */
+            .footer .brand {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 12px;
+                padding-left: 40px;
+            }
+
+            .footer .logo img {
+                max-height: 70px;
+                width: auto;
+                display: block;
+                object-fit: contain;
+                margin-left: 10px;
+            }
+
+            .footer .address-section {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                /* Registered + Corporate */
+                gap: 80px;
+                /* spacing between them */
+                margin-top: 18px;
             }
         </style>
         <!-- Modern Footer -->
-        <footer class="bg-dark text-white pt-5 pb-4">
-            <div class="container">
-                <div class="row">
+        <div class="site-wrap">
+            <footer class="footer" role="contentinfo">
 
-                    <!-- Logo / Company -->
-                    <div class="col-md-3 mb-3">
-                        <a href="index.html" class="footer-logo d-inline-block mb-3">
+                <!-- First Row -->
+                <div class="footer-grid-top">
+                    <!-- Col 1 -->
+                    <div class="brand">
+                        <div class="logo">
                             <img src="images/demo-corporate-logo-black@2x.png" alt="Bodhitree Logo" />
-                        </a>
-                        <p class="small text">
-                            Bodhitree Technologies Pvt. Ltd. is a leading provider of Network Lifecycle Management
-                            Solutions to Operators & Service Providers.
-                        </p>
+                        </div>
+                        <p>Bodhitree Technologies Pvt. Ltd. — Network Lifecycle Management Solutions to Operators &
+                            Service Providers.</p>
                     </div>
 
-                    <!-- Quick Links -->
-                    <div class="col-md-3 mb-3">
-                        <h5 class="fw-semibold mb-3">Company</h5>
-                        <ul class="list-unstyled">
-                            <li><a href="index.html" class="text-white text-decoration-none">Home</a></li>
-                            <li><a href="demo-corporate-about.html" class="text-white text-decoration-none">About</a>
-                            </li>
-                            <li><a href="demo-corporate-services.html"
-                                    class="text-white text-decoration-none">Services</a></li>
+                    <!-- Col 2 -->
+                    <div>
+                        <h4>Company</h4>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="demo-corporate-about.html">About</a></li>
+                            <li><a href="demo-corporate-services.html">Services</a></li>
                         </ul>
                     </div>
 
-                    <div class="col-md-3 mb-3">
-                        <h5 class="fw-semibold mb-3">Resources</h5>
-                        <ul class="list-unstyled">
-                            <li><a href="product.html" class="text-white text-decoration-none">Products</a></li>
-                            <li><a href="gallery.html" class="text-white text-decoration-none">Gallery</a></li>
-                            <li><a href="demo-corporate-contact.html"
-                                    class="text-white text-decoration-none">Contact</a></li>
+                    <!-- Col 3 -->
+                    <div>
+                        <h4>Resources</h4>
+                        <ul>
+                            <li><a href="product.html">Products</a></li>
+                            <li><a href="gallery.html">Gallery</a></li>
+                            <li><a href="demo-corporate-contact.html">Contact</a></li>
                         </ul>
                     </div>
 
-                    <!-- Social Media -->
-                    <div class="col-md-3 mb-3">
-                        <h5 class="fw-semibold mb-3">Follow Us</h5>
-                        <a href="https://www.facebook.com/people/Bodhitree-Technologies-Pvt-Ltd/100057190400397/"
-                            class="text-white me-3"><i class="bi bi-facebook"></i></a>
-                        <a href="https://twitter.com/Bodhi09881061" class="text-white me-3"><i
-                                class="bi bi-twitter"></i></a>
-                        <a href="https://www.instagram.com/bodhi.tree2020/" class="text-white me-3"><i
-                                class="bi bi-instagram"></i></a>
-                        <a href="https://www.linkedin.com/company/13368154/" class="text-white"><i
-                                class="bi bi-linkedin"></i></a>
+                    <!-- Col 4 -->
+                    <div class="newsletter" aria-labelledby="newsletter-heading">
+                        <h4 id="newsletter-heading">Stay informed</h4>
+                        <p>Subscribe for product updates, case studies and invites.</p>
+                        <form onsubmit="event.preventDefault(); alert('Thanks — for Subscribe Us!');">
+                            <input type="email" placeholder="Enter your email" required />
+                            <button type="submit">Subscribe</button>
+                        </form>
+                        <div class="socials" aria-label="social links">
+                            <a href="https://www.facebook.com/people/Bodhitree-Technologies-Pvt-Ltd/100057190400397/"
+                                title="facebook"><i class="fab fa-facebook-f"></i></a>
+                            <a href="https://twitter.com/Bodhi09881061" title="twitter"><i
+                                    class="fab fa-twitter"></i></a>
+                            <a href="https://www.instagram.com/bodhi.tree2020/" title="instagram"><i
+                                    class="fab fa-instagram"></i></a>
+                            <a href="https://www.linkedin.com/company/13368154/" title="linkedin"><i
+                                    class="fab fa-linkedin-in"></i></a>
+                        </div>
                     </div>
-
                 </div>
 
-
-                <!-- Copyright -->
-                <div class="text-center pt-3 border-top border-secondary mt-4">
-                    <p class="small mb-0">
-                        &copy; 2024 Bodhitree Technologies. All Rights Reserved.
-                    </p>
+                <!-- Second Row -->
+                <div class="footer-grid-bottom">
+                    <div>
+                        <h4>Registered Address</h4>
+                        <p>S-95, Okhla Industrial Area, Phase-II, New Delhi, Delhi 110020</p>
+                    </div>
+                    <div>
+                        <h4>Corporate Office</h4>
+                        <p>S-6, Pocket S, Okhla Industrial Estate, Phase II, New Delhi, Delhi 110020</p>
+                    </div>
                 </div>
-            </div>
-        </footer>
+
+                <!-- Bottom -->
+                <div class="footer-bottom">
+                    <div class="copyright">&copy; <span id="year"></span> 2024 Bodhitree Technologies. All Rights
+                        Reserved.
+                    </div>
+                </div>
+
+            </footer>
+        </div>
         <!-- end footer -->
         <!-- end footer -->
         <!-- start scroll progress -->
