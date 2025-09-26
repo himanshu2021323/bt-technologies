@@ -277,23 +277,25 @@
             text-align: left
         }
 
-        /* modal */
+        /* custom modal */
         .backdrop {
             position: fixed;
             inset: 0;
-            background: rgba(2, 6, 23, 0.45);
+            background: rgba(2, 6, 23, .45);
             display: flex;
             align-items: center;
             justify-content: center;
-            z-index: 80
+            z-index: var(--z-backdrop);
         }
 
-        .modal {
-            background: white;
+        .modal-box {
+            background: #fff;
             padding: 18px;
             border-radius: 10px;
             width: 380px;
-            max-width: 92%
+            max-width: 92%;
+            z-index: var(--z-modal);
+            box-shadow: 0 16px 40px rgba(2, 6, 23, .25);
         }
 
         .link {
@@ -361,7 +363,7 @@
         <div class="container" style="text-align: left;">
             <header class="hero">
                 <div class="hero-left">
-                    <h1>Contact Bodhitree Technologies Pvt Ltd</h1>
+                    <h1>Contact Bodhitree Technologies Pvt. Ltd.</h1>
                     <p>Thank you for visiting our website! Have a question or need support? Reach out — we are here to
                         help.</p>
                     <div class="actions">
@@ -468,18 +470,19 @@
             <button onclick="openWhatsApp()">WhatsApp</button>
         </div>
 
-        <!-- callback modal -->
-        <div id="callback-modal" style="display:none">
-            <div class="backdrop">
-                <div class="modal">
-                    <h3>Request a callback</h3>
+        <div id="callback-wrap" style="display:none">
+            <div class="backdrop" role="dialog" aria-modal="true" aria-labelledby="cb-title">
+                <div class="modal-box">
+                    <h3 id="cb-title" class="h5">Request a callback</h3>
                     <form onsubmit="requestCallback(event)">
-                        <div style="margin-top:8px"><input name="cbname" placeholder="Your name" required /></div>
-                        <div style="margin-top:8px"><input name="cbphone" placeholder="Phone number" required /></div>
-                        <div style="margin-top:12px"><button class="btn btn-primary" type="submit">Request
-                                Callback</button>
-                            <button type="button" class="btn btn-white" onclick="closeCallback()"
-                                style="margin-left:8px">Cancel</button>
+                        <div class="mt-2"><input name="cbname" placeholder="Your name" required /></div>
+                        <div class="mt-2"><input name="cbphone" placeholder="Phone number" required /></div>
+                        <div class="mt-3">
+                            <button class="btn btn-dark" style="background-color: #222; color: #fff;"
+                                type="submit">Request Callback</button>
+                            <button type="button" class="btn btn-outline-secondary ms-2"
+                                style="background-color: #fff; color: #0b1220;"
+                                onclick="closeCallback()">Cancel</button>
                         </div>
                     </form>
                 </div>
@@ -695,7 +698,8 @@
                         <div class="logo">
                             <img src="images/demo-corporate-logo-black@2x.png" alt="Bodhitree Logo" />
                         </div>
-                        <p style="font-size: small;">Bodhitree Technologies Pvt. Ltd.<br>Network Lifecycle Management Solutions to Operators & Service Providers.</p>
+                        <p style="font-size: small;">Bodhitree Technologies Pvt. Ltd.<br>Network Lifecycle Management
+                            Solutions to Operators & Service Providers.</p>
                     </div>
 
                     <!-- Col 2 -->
@@ -787,18 +791,6 @@
     <script type="text/javascript" src="js/main.js"></script>
 
     <script>
-        // Data & simple interactions
-        const testimonials = [
-            { name: 'Rahul K.', text: 'Excellent telecom solutions and fast support.' },
-            { name: 'Neha S.', text: 'Professional team and timely response.' },
-            { name: 'Amit P.', text: 'Great experience integrating services with BT.' }
-        ];
-        let testiIndex = 0;
-
-        function prevTesti() { testiIndex = (testiIndex + testimonials.length - 1) % testimonials.length; renderTesti(); }
-        function nextTesti() { testiIndex = (testiIndex + 1) % testimonials.length; renderTesti(); }
-        function renderTesti() { document.getElementById('testi-text').innerText = '"' + testimonials[testiIndex].text + '"'; document.getElementById('testi-meta').innerText = '— ' + testimonials[testiIndex].name; }
-
         function openMail(email) { window.location.href = 'mailto:' + email + '?subject=Inquiry%20from%20Website'; }
         function openWhatsApp() { window.open('https://wa.me/919898040377?text=Hello%20Bodhitree%20Technologies', '_blank'); }
         function openChatMenu() { document.getElementById('chat-sheet').style.display = 'block'; setTimeout(() => { document.getElementById('chat-sheet').style.opacity = 1 }, 10); }
@@ -807,10 +799,29 @@
         function locateUs() { const q = encodeURIComponent('S-6, Pocket S, Okhla Phase II, Okhla Industrial Estate, New Delhi, Delhi 110020'); window.open('https://www.google.com/maps/search/?api=1&query=' + q, '_blank'); }
 
         function submitContact(e) { e.preventDefault(); alert('Message sent (demo). Connect the form to your backend to store messages.'); e.target.reset(); }
-
-        function openCallback() { document.getElementById('callback-modal').style.display = 'block'; }
-        function closeCallback() { document.getElementById('callback-modal').style.display = 'none'; }
-        function requestCallback(e) { e.preventDefault(); closeCallback(); alert('Callback requested — team will contact you soon.'); }
+        // callback modal (custom, accessible-ish)
+        const cbWrap = document.getElementById('callback-wrap');
+        function openCallback() {
+            cbWrap.style.display = 'block';
+            document.body.style.overflow = 'hidden'; // prevent body scroll under modal
+            // basic focus management
+            setTimeout(() => cbWrap.querySelector('input[name="cbname"]').focus(), 0);
+        }
+        function closeCallback() {
+            cbWrap.style.display = 'none';
+            document.body.style.overflow = '';
+        }
+        function requestCallback(e) {
+            e.preventDefault();
+            const fd = new FormData(e.target);
+            const payload = { name: fd.get('cbname'), phone: fd.get('cbphone') };
+            console.log('Callback requested:', payload);
+            closeCallback();
+            alert('Callback requested — our team will contact you soon.');
+        }
+        // close modal on backdrop click / Esc
+        cbWrap.addEventListener('click', (e) => { if (e.target.classList.contains('backdrop')) closeCallback(); });
+        window.addEventListener('keydown', (e) => { if (e.key === 'Escape' && cbWrap.style.display === 'block') closeCallback(); });
 
         // Close chat-sheet when clicking outside
         window.addEventListener('click', function (ev) { const sheet = document.getElementById('chat-sheet'); if (sheet.style.display === 'block' && !sheet.contains(ev.target) && !ev.target.classList.contains('chat-btn')) { sheet.style.display = 'none'; } })
